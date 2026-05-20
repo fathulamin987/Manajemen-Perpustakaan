@@ -42,7 +42,7 @@ def buku():
     if filter_kategori:
         data_buku = [item for item in data_buku if item.get("kategori") == filter_kategori]
 
-    # Mengurutkan buku berdasarkan judul
+    
     data_buku = sorted(data_buku, key=lambda x: x["judul"])
 
     return render_template(
