@@ -23,7 +23,7 @@
         <div class="topbar-left">
 
             <div class="logo-box">
-                📚
+                <img src="{{ url_for('static', filename='images/logo_perpus.png') }}" alt="Logo Perpustakaan" class="logo-img">
             </div>
 
             <div>
@@ -72,7 +72,7 @@
         <div class="hero-content">
 
             <span class="hero-badge">
-                📚 Kelola Koleksi Buku
+                Kelola Koleksi Buku
             </span>
 
             <h1>
@@ -147,6 +147,10 @@
                     <option value="Fiksi & Sastra">
                         Fiksi & Sastra
                     </option>
+                    
+                    <option value="Filsafat">
+                        Filsafat
+                    </option>
 
                 </select>
 
@@ -200,6 +204,15 @@
                         Fiksi & Sastra
 
                     </option>
+                    
+                    <option value="Filsafat"
+                    {% if kategori_terpilih == 'Filsafat' %}
+                    selected
+                    {% endif %}>
+
+                        Filsafat
+
+                    </option>
 
                 </select>
 
@@ -226,13 +239,19 @@
                     {% if item.kategori == 'Akademik & Teknis' %}
 
                     <span class="badge-blue">
-                        Akademik
+                        {{ item.kategori }}
                     </span>
 
                     {% elif item.kategori == 'Fiksi & Sastra' %}
 
                     <span class="badge-purple">
-                        Sastra
+                        {{ item.kategori }}
+                    </span>
+                    
+                    {% elif item.kategori == 'Filsafat' %}
+
+                    <span class="badge-green">
+                        {{ item.kategori }}
                     </span>
 
                     {% else %}
@@ -262,7 +281,7 @@
 
                     <div class="stock-box">
 
-                        📦 {{ item.stok }} Buku
+                        {{ item.stok }} Buku
 
                     </div>
 

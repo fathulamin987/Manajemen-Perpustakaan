@@ -23,7 +23,7 @@
         <div class="topbar-left">
 
             <div class="logo-box">
-                📚
+                <img src="{{ url_for('static', filename='images/logo_perpus.png') }}" alt="Logo Perpustakaan" class="logo-img">
             </div>
 
             <div>
@@ -72,7 +72,7 @@
         <div class="hero-content">
 
             <span class="hero-badge">
-                🚀 Sistem Berbasis ADT & Flask
+                Sistem Berbasis ADT & Flask
             </span>
 
             <h1>
@@ -97,13 +97,9 @@
 
             <div class="dashboard-card">
 
-                <div class="dashboard-icon blue">
-                    📘
-                </div>
-
                 <div>
 
-                    <span>Total Buku</span>
+                    <span><h3>Total Buku</h3></span>
 
                     <h2>{{ total_buku }}</h2>
 
@@ -113,13 +109,9 @@
 
             <div class="dashboard-card">
 
-                <div class="dashboard-icon green">
-                    🎓
-                </div>
-
                 <div>
 
-                    <span>Mahasiswa</span>
+                    <span><h3>Mahasiswa</h3></span>
 
                     <h2>{{ total_mahasiswa }}</h2>
 
@@ -129,13 +121,9 @@
 
             <div class="dashboard-card">
 
-                <div class="dashboard-icon orange">
-                    🔄
-                </div>
-
                 <div>
 
-                    <span>Dipinjam</span>
+                    <span><h3>Dipinjam</h3></span>
 
                     <h2>{{ total_peminjaman }}</h2>
 

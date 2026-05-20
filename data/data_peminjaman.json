@@ -1,6 +1,7 @@
 [
     {
         "nim": "240411100217",
-        "kode_buku": "N009"
+        "kode_buku": "N009",
+        "durasi": 7
     }
 ]

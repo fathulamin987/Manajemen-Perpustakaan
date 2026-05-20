@@ -75,5 +75,40 @@
         "penulis": "Azka Syaikhu",
         "stok": 9,
         "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "C001",
+        "judul": "Filosofi Teras",
+        "penulis": "Henry Manampiring",
+        "stok": 5,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "F006",
+        "judul": "3726 MDPL",
+        "penulis": "Nurwina Sari",
+        "stok": 6,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "D001",
+        "judul": "Pepak Bahasa Jawa",
+        "penulis": "Nopal",
+        "stok": 4,
+        "kategori": ""
+    },
+    {
+        "kode": "F007",
+        "judul": "Seporsi Mie Ayam Sebelum Mati",
+        "penulis": "Brian Khrisna",
+        "stok": 10,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "C002",
+        "judul": "Madilog",
+        "penulis": "Tan Malaka",
+        "stok": 5,
+        "kategori": "Fiksi & Sastra"
     }
 ]

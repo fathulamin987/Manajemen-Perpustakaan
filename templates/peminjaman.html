@@ -23,7 +23,7 @@
         <div class="topbar-left">
 
             <div class="logo-box">
-                🔄
+                <img src="{{ url_for('static', filename='images/logo_perpus.png') }}" alt="Logo Perpustakaan" class="logo-img">
             </div>
 
             <div>
@@ -75,7 +75,7 @@
         <div class="hero-content">
 
             <span class="hero-badge">
-                🔄 Kelola Peminjaman Buku
+                Kelola Peminjaman Buku
             </span>
 
             <h1>
@@ -114,166 +114,74 @@
 
             </div>
 
-            <form method="POST"
-                  action="/tambah_peminjaman"
-                  class="form-grid-modern">
+            <form method="POST" action="/tambah_peminjaman" class="form-grid-modern">
 
-                <!-- MAHASISWA -->
                 <select name="nim" required>
-
-                    <option value="">
-                        Pilih Mahasiswa
-                    </option>
-
+                    <option value="">Pilih Mahasiswa</option>
                     {% for item in mahasiswa %}
-
-                    <option value="{{ item.nim }}">
-
-                        {{ item.nama }}
-
-                    </option>
-
+                    <option value="{{ item.nim }}">{{ item.nama }}</option>
                     {% endfor %}
-
                 </select>
 
-                <!-- BUKU -->
                 <select name="kode_buku" required>
-
-                    <option value="">
-                        Pilih Buku
-                    </option>
-
+                    <option value="">Pilih Buku</option>
                     {% for item in buku %}
-
-                    <option value="{{ item.kode }}">
-
-                        {{ item.judul }}
-
-                    </option>
-
+                    <option value="{{ item.kode }}">{{ item.judul }}</option>
                     {% endfor %}
-
                 </select>
 
-                <!-- BUTTON -->
-                <button type="submit"
-                        class="btn-submit-modern">
+                <input type="number" name="durasi" placeholder="Durasi Pinjam (Hari)" min="1" required>
 
+                <button type="submit" class="btn-submit-modern">
                     + Proses Pinjam
-
                 </button>
 
             </form>
 
-        </section>
 
-        <!-- TABLE -->
-        <section class="table-modern-section">
+            <table class="modern-table">
 
-            <div class="section-header-modern">
+                <thead>
+                    <tr>
+                        <th>NIM Mahasiswa</th>
+                        <th>Kode Buku</th>
+                        <th>Durasi</th> <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
 
-                <div>
+                <tbody>
+                    {% for item in peminjaman %}
+                    <tr>
+                        <td class="table-highlight">
+                            {{ item.nim }}
+                        </td>
+                        <td>
+                            {{ item.kode_buku }}
+                        </td>
+                        <td>
+                            {{ item.durasi }} Hari </td>
+                        <td>
+                            <span class="status-active">
+                                Dipinjam
+                            </span>
+                        </td>
+                        <td>
+                            <a href="/pengembalian/{{ item.kode_buku }}" class="btn-finish-modern">
+                                Selesai
+                            </a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="5" class="empty-table">
+                            Tidak ada peminjaman aktif
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
 
-                    <h2>
-                        Data Peminjaman Aktif
-                    </h2>
-
-                    <p>
-                        Daftar buku yang sedang dipinjam
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="table-modern-wrapper">
-
-                <table class="modern-table">
-
-                    <thead>
-
-                        <tr>
-
-                            <th>
-                                NIM Mahasiswa
-                            </th>
-
-                            <th>
-                                Kode Buku
-                            </th>
-
-                            <th>
-                                Status
-                            </th>
-
-                            <th>
-                                Aksi
-                            </th>
-
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-
-                        {% for item in peminjaman %}
-
-                        <tr>
-
-                            <td class="table-highlight">
-
-                                {{ item.nim }}
-
-                            </td>
-
-                            <td>
-
-                                {{ item.kode_buku }}
-
-                            </td>
-
-                            <td>
-
-                                <span class="status-active">
-
-                                    Dipinjam
-
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                <a href="/pengembalian/{{ item.kode_buku }}"
-                                   class="btn-finish-modern">
-
-                                    Selesai
-
-                                </a>
-
-                            </td>
-
-                        </tr>
-
-                        {% else %}
-
-                        <tr>
-
-                            <td colspan="4"
-                                class="empty-table">
-
-                                Tidak ada peminjaman aktif
-
-                            </td>
-
-                        </tr>
-
-                        {% endfor %}
-
-                    </tbody>
-
-                </table>
+            </table>
 
             </div>
 

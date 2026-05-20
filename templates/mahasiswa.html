@@ -23,7 +23,7 @@
         <div class="topbar-left">
 
             <div class="logo-box">
-                🎓
+                <img src="{{ url_for('static', filename='images/logo_perpus.png') }}" alt="Logo Perpustakaan" class="logo-img">
             </div>
 
             <div>
@@ -72,7 +72,7 @@
         <div class="hero-content">
 
             <span class="hero-badge">
-                🎓 Kelola Data Mahasiswa
+                Kelola Data Mahasiswa
             </span>
 
             <h1>
@@ -164,66 +164,40 @@
                 <table class="modern-table">
 
                     <thead>
-
                         <tr>
-
-                            <th>
-                                NIM
-                            </th>
-
-                            <th>
-                                Nama Mahasiswa
-                            </th>
-
-                            <th>
-                                Program Studi
-                            </th>
-
-                        </tr>
-
+                            <th>NIM</th>
+                            <th>Nama Mahasiswa</th>
+                            <th>Program Studi</th>
+                            <th>Aksi</th> </tr>
                     </thead>
 
                     <tbody>
-
                         {% for item in mahasiswa %}
-
                         <tr>
-
                             <td class="table-highlight">
-
                                 {{ item.nim }}
-
                             </td>
-
                             <td>
-
                                 {{ item.nama }}
-
                             </td>
-
                             <td>
-
                                 {{ item.prodi }}
-
                             </td>
-
+                            <td>
+                                <a href="/hapus_mahasiswa/{{ item.nim }}" 
+                                onclick="return confirm('Apakah Anda yakin ingin menghapus mahasiswa ini?');"
+                                style="color: #e74c3c; text-decoration: none; font-weight: bold;">
+                                    Hapus
+                                </a>
+                            </td>
                         </tr>
-
                         {% else %}
-
                         <tr>
-
-                            <td colspan="3"
-                                class="empty-table">
-
+                            <td colspan="4" class="empty-table">
                                 Tidak ada data mahasiswa
-
                             </td>
-
                         </tr>
-
                         {% endfor %}
-
                     </tbody>
 
                 </table>

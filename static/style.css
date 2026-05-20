@@ -45,6 +45,23 @@ body{
    NAVBAR
 ========================= */
 
+/* Mengatur kotak pembungkus logo */
+.logo-box {
+    width: 45px;         /* Tentukan lebar maksimal kotak */
+    height: 45px;        /* Tentukan tinggi maksimal kotak */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;    /* Memastikan tidak ada bagian gambar yang luber */
+}
+
+/* Mengatur gambar PNG agar tidak besar */
+.logo-img {
+    max-width: 100%;     /* Lebar gambar maksimal 100% dari logo-box (45px) */
+    max-height: 100%;    /* Tinggi gambar maksimal 100% dari logo-box (45px) */
+    object-fit: contain; /* Menjaga rasio asli gambar agar tidak gepeng/terdistorsi */
+}
+
 .topbar{
 
     position:fixed;
@@ -675,6 +692,7 @@ body{
 
 .badge-blue,
 .badge-purple,
+.badge-green,
 .badge-gray{
 
     padding:8px 14px;
@@ -698,6 +716,13 @@ body{
     background:#f3e8ff;
 
     color:#9333ea;
+}
+
+.badge-green{
+
+    background:#deffeb;
+
+    color:#188643;
 }
 
 .badge-gray{

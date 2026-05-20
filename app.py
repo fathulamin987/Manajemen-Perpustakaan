@@ -230,6 +230,25 @@ def tambah_mahasiswa():
 
     return redirect("/mahasiswa")
 
+# =========================
+# HAPUS MAHASISWA
+# =========================
+@app.route("/hapus_mahasiswa/<nim>")
+def hapus_mahasiswa(nim):
+
+    data_mahasiswa = baca_json("data/data_mahasiswa.json")
+
+    data_baru = []
+
+    for item in data_mahasiswa:
+
+        if item["nim"] != nim:
+            data_baru.append(item)
+
+    simpan_json("data/data_mahasiswa.json", data_baru)
+
+    return redirect("/mahasiswa")
+
 
 # =========================
 # HALAMAN PEMINJAMAN
@@ -259,7 +278,8 @@ def tambah_peminjaman():
 
     pinjam_baru = {
         "nim": request.form["nim"],
-        "kode_buku": request.form["kode_buku"]
+        "kode_buku": request.form["kode_buku"],
+        "durasi": int(request.form["durasi"])  # <- Tambahkan baris ini untuk menangkap durasi
     }
 
     data_peminjaman.append(pinjam_baru)
