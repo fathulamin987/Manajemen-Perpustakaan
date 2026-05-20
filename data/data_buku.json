@@ -68,5 +68,12 @@
         "penulis": "Leila S. Chudori",
         "stok": 5,
         "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "B002",
+        "judul": "Machine Learning Pemula",
+        "penulis": "Azka Syaikhu",
+        "stok": 9,
+        "kategori": "Akademik & Teknis"
     }
 ]

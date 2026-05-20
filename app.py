@@ -2,23 +2,41 @@ from flask import Flask, render_template, request, redirect
 import json
 import os
 
+# =========================
+# IMPORT ADT / STRUKTUR DATA
+# =========================
+from struktur_data.binary_tree_buku import BinaryTree
+from struktur_data.hashing_buku import HashingBuku
+from struktur_data.pencarian import cari_buku
+from struktur_data.pengurutan import urutkan_judul
+from struktur_data.stack_riwayat import StackRiwayat
+
 app = Flask(__name__)
 
-
+# =========================
+# HELPER JSON
+# =========================
 def baca_json(path):
+
     if not os.path.exists(path):
         return []
+
     with open(path, "r", encoding="utf-8") as file:
         return json.load(file)
 
 
 def simpan_json(path, data):
+
     with open(path, "w", encoding="utf-8") as file:
         json.dump(data, file, indent=4)
 
 
+# =========================
+# DASHBOARD
+# =========================
 @app.route("/")
 def dashboard():
+
     buku = baca_json("data/data_buku.json")
     mahasiswa = baca_json("data/data_mahasiswa.json")
     peminjaman = baca_json("data/data_peminjaman.json")
@@ -31,29 +49,46 @@ def dashboard():
     )
 
 
+# =========================
+# HALAMAN BUKU
+# MENGGUNAKAN:
+# - SEARCHING
+# - BINARY TREE
+# - SORTING
+# =========================
 @app.route("/buku")
 def buku():
-    data_buku = baca_json("data/data_buku.json")
-    
-    # Mengambil parameter filter_kategori dari dropdown filter di HTML
-    filter_kategori = request.args.get("filter_kategori", "")
-    
-    # Jika kategori tertentu dipilih, lakukan penyaringan (filtering)
-    if filter_kategori:
-        data_buku = [item for item in data_buku if item.get("kategori") == filter_kategori]
 
-    
-    data_buku = sorted(data_buku, key=lambda x: x["judul"])
+    data_buku = baca_json("data/data_buku.json")
+
+    # SEARCHING ADT
+    keyword = request.args.get("keyword", "")
+
+    if keyword:
+        data_buku = cari_buku(data_buku, keyword)
+
+    # BINARY TREE ADT
+    tree = BinaryTree()
+
+    for item in data_buku:
+        tree.insert(item)
+
+    # SORTING ADT
+    data_buku = urutkan_judul(tree.inorder())
 
     return render_template(
-        "buku.html", 
-        buku=data_buku, 
-        kategori_terpilih=filter_kategori
+        "buku.html",
+        buku=data_buku,
+        keyword=keyword
     )
 
 
+# =========================
+# TAMBAH BUKU
+# =========================
 @app.route("/tambah_buku", methods=["POST"])
 def tambah_buku():
+
     data_buku = baca_json("data/data_buku.json")
 
     buku_baru = {
@@ -61,59 +96,126 @@ def tambah_buku():
         "judul": request.form["judul"],
         "penulis": request.form["penulis"],
         "stok": int(request.form["stok"]),
-        "kategori": request.form["kategori"]  # Menyimpan kategori dari form input
+        "kategori": request.form["kategori"]
     }
 
     data_buku.append(buku_baru)
+
     simpan_json("data/data_buku.json", data_buku)
+
     return redirect("/buku")
 
 
+# =========================
+# EDIT BUKU
+# MENGGUNAKAN HASHING
+# =========================
 @app.route("/edit_buku/<kode>")
 def edit_buku(kode):
+
     data_buku = baca_json("data/data_buku.json")
-    buku_edit = None
 
-    for item in data_buku:
-        if item["kode"] == kode:
-            buku_edit = item
-            break
+    hashing = HashingBuku()
 
-    return render_template("edit_buku.html", buku=buku_edit)
+    for buku in data_buku:
+        hashing.tambah(buku["kode"], buku)
+
+    buku_edit = hashing.cari(kode)
+
+    return render_template(
+        "edit_buku.html",
+        buku=buku_edit
+    )
 
 
+# =========================
+# UPDATE BUKU
+# =========================
 @app.route("/update_buku/<kode>", methods=["POST"])
 def update_buku(kode):
+
     data_buku = baca_json("data/data_buku.json")
 
     for item in data_buku:
+
         if item["kode"] == kode:
+
             item["judul"] = request.form["judul"]
             item["penulis"] = request.form["penulis"]
             item["stok"] = int(request.form["stok"])
-            item["kategori"] = request.form["kategori"]  # Memperbarui kategori dari form edit
+            item["kategori"] = request.form["kategori"]
+
             break
 
     simpan_json("data/data_buku.json", data_buku)
+
     return redirect("/buku")
 
 
+# =========================
+# HAPUS BUKU
+# =========================
 @app.route("/hapus_buku/<kode>")
 def hapus_buku(kode):
+
     data_buku = baca_json("data/data_buku.json")
-    data_baru = [item for item in data_buku if item["kode"] != kode]
+
+    data_baru = []
+
+    for item in data_buku:
+
+        if item["kode"] != kode:
+            data_baru.append(item)
+
     simpan_json("data/data_buku.json", data_baru)
+
     return redirect("/buku")
 
 
+# =========================
+# CARI BERDASARKAN KODE
+# MENGGUNAKAN HASHING
+# =========================
+@app.route("/cari_kode")
+def cari_kode():
+
+    kode = request.args.get("kode", "")
+
+    data_buku = baca_json("data/data_buku.json")
+
+    hashing = HashingBuku()
+
+    for buku in data_buku:
+        hashing.tambah(buku["kode"], buku)
+
+    hasil = hashing.cari(kode)
+
+    return render_template(
+        "buku.html",
+        hasil=hasil
+    )
+
+
+# =========================
+# HALAMAN MAHASISWA
+# =========================
 @app.route("/mahasiswa")
 def mahasiswa():
+
     data_mahasiswa = baca_json("data/data_mahasiswa.json")
-    return render_template("mahasiswa.html", mahasiswa=data_mahasiswa)
+
+    return render_template(
+        "mahasiswa.html",
+        mahasiswa=data_mahasiswa
+    )
 
 
+# =========================
+# TAMBAH MAHASISWA
+# =========================
 @app.route("/tambah_mahasiswa", methods=["POST"])
 def tambah_mahasiswa():
+
     data_mahasiswa = baca_json("data/data_mahasiswa.json")
 
     mahasiswa_baru = {
@@ -123,12 +225,18 @@ def tambah_mahasiswa():
     }
 
     data_mahasiswa.append(mahasiswa_baru)
+
     simpan_json("data/data_mahasiswa.json", data_mahasiswa)
+
     return redirect("/mahasiswa")
 
 
+# =========================
+# HALAMAN PEMINJAMAN
+# =========================
 @app.route("/peminjaman")
 def peminjaman():
+
     buku = baca_json("data/data_buku.json")
     mahasiswa = baca_json("data/data_mahasiswa.json")
     peminjaman = baca_json("data/data_peminjaman.json")
@@ -141,8 +249,12 @@ def peminjaman():
     )
 
 
+# =========================
+# TAMBAH PEMINJAMAN
+# =========================
 @app.route("/tambah_peminjaman", methods=["POST"])
 def tambah_peminjaman():
+
     data_peminjaman = baca_json("data/data_peminjaman.json")
 
     pinjam_baru = {
@@ -151,32 +263,63 @@ def tambah_peminjaman():
     }
 
     data_peminjaman.append(pinjam_baru)
+
     simpan_json("data/data_peminjaman.json", data_peminjaman)
+
     return redirect("/peminjaman")
 
 
+# =========================
+# PENGEMBALIAN
+# MENGGUNAKAN STACK
+# =========================
 @app.route("/pengembalian/<kode>")
 def pengembalian(kode):
+
     data_peminjaman = baca_json("data/data_peminjaman.json")
     data_riwayat = baca_json("data/data_riwayat.json")
 
+    stack = StackRiwayat()
+
     data_baru = []
+
     for item in data_peminjaman:
+
         if item["kode_buku"] == kode:
-            data_riwayat.append(item)
+
+            # PUSH KE STACK
+            stack.push(item)
+
         else:
             data_baru.append(item)
 
+    # POP DARI STACK KE RIWAYAT
+    while stack.tampilkan():
+
+        data_riwayat.append(stack.pop())
+
     simpan_json("data/data_peminjaman.json", data_baru)
     simpan_json("data/data_riwayat.json", data_riwayat)
+
     return redirect("/peminjaman")
 
 
+# =========================
+# HALAMAN RIWAYAT
+# =========================
 @app.route("/riwayat")
 def riwayat():
+
     data_riwayat = baca_json("data/data_riwayat.json")
-    return render_template("riwayat.html", riwayat=data_riwayat)
+
+    return render_template(
+        "riwayat.html",
+        riwayat=data_riwayat
+    )
 
 
+# =========================
+# MENJALANKAN FLASK
+# =========================
 if __name__ == "__main__":
     app.run(debug=True)
