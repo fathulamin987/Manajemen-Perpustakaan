@@ -110,5 +110,1293 @@
         "penulis": "Tan Malaka",
         "stok": 5,
         "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "A008",
+        "judul": "Pengantar Sistem Operasi",
+        "penulis": "Stalling William",
+        "stok": 7,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A009",
+        "judul": "Arsitektur Kontemporer dan Konstruksi",
+        "penulis": "Ir. Bambang Susilo",
+        "stok": 4,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A010",
+        "judul": "Dasar-Dasar Mikrobiologi",
+        "penulis": "Michael J. Pelczar",
+        "stok": 5,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A011",
+        "judul": "Kriptografi dan Keamanan Informasi",
+        "penulis": "Rinaldi Munir",
+        "stok": 6,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A012",
+        "judul": "Pengantar Logika Matematika",
+        "penulis": "Drs. Sukirman",
+        "stok": 8,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A013",
+        "judul": "Pemrograman Web dengan Node.js",
+        "penulis": "Rahmat Priyanto",
+        "stok": 11,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A014",
+        "judul": "Fisika Dasar untuk Sains & Teknik",
+        "penulis": "Halliday & Resnick",
+        "stok": 3,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A015",
+        "judul": "Prinsip-Prinsip Ekonomi Makro",
+        "penulis": "N. Gregory Mankiw",
+        "stok": 9,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A016",
+        "judul": "Analisis Perancangan Sistem Informasi",
+        "penulis": "Prof. Dr. Jogiyanto",
+        "stok": 12,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A017",
+        "judul": "Pengantar Statistika Dasar",
+        "penulis": "Prof. Dr. Sudjana",
+        "stok": 14,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A018",
+        "judul": "Dasar Elektro Digital",
+        "penulis": "Thomas L. Floyd",
+        "stok": 5,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A019",
+        "judul": "Manajemen Database dengan MySQL",
+        "penulis": "Abdul Kadir",
+        "stok": 10,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A020",
+        "judul": "Kecerdasan Buatan dan Jaringan Saraf",
+        "penulis": "Sri Kusumadewi",
+        "stok": 6,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A021",
+        "judul": "Kimia Organik untuk Perguruan Tinggi",
+        "penulis": "Riswiyanto",
+        "stok": 4,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A022",
+        "judul": "Pengantar Rekayasa Perangkat Lunak",
+        "penulis": "Roger S. Pressman",
+        "stok": 8,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A023",
+        "judul": "Teori Bahasa dan Otomata",
+        "penulis": "Utdirartatavia",
+        "stok": 7,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A024",
+        "judul": "Akuntansi Pengantar 1",
+        "penulis": "Slamet Sugiri",
+        "stok": 15,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "F008",
+        "judul": "Gadis Kretek",
+        "penulis": "Ratih Kumala",
+        "stok": 11,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F009",
+        "judul": "Cantik Itu Luka",
+        "penulis": "Eka Kurniawan",
+        "stok": 5,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F010",
+        "judul": "Pulang",
+        "penulis": "Leila S. Chudori",
+        "stok": 7,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F011",
+        "judul": "Ronggeng Dukuh Paruk",
+        "penulis": "Ahmad Tohari",
+        "stok": 9,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F012",
+        "judul": "Bumi Manusia",
+        "penulis": "Pramoedya Ananta Toer",
+        "stok": 13,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F013",
+        "judul": "Anak Semua Bangsa",
+        "penulis": "Pramoedya Ananta Toer",
+        "stok": 6,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F014",
+        "judul": "Saman",
+        "penulis": "Ayu Utami",
+        "stok": 4,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F015",
+        "judul": "Supernova: Ksatria, Puteri, dan Bintang Jatuh",
+        "penulis": "Dee Lestari",
+        "stok": 8,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F016",
+        "judul": "Perahu Kertas",
+        "penulis": "Dee Lestari",
+        "stok": 10,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F017",
+        "judul": "Sang Pemimpi",
+        "penulis": "Andrea Hirata",
+        "stok": 12,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F018",
+        "judul": "Edensor",
+        "penulis": "Andrea Hirata",
+        "stok": 7,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F019",
+        "judul": "Bulan (Serial Dunia Paralel)",
+        "penulis": "Tere Liye",
+        "stok": 9,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F020",
+        "judul": "Matahari (Serial Dunia Paralel)",
+        "penulis": "Tere Liye",
+        "stok": 8,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F021",
+        "judul": "Hujan",
+        "penulis": "Tere Liye",
+        "stok": 15,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F022",
+        "judul": "Mariposa",
+        "penulis": "Lulu HF",
+        "stok": 11,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F023",
+        "judul": "Geez & Ann",
+        "penulis": "Nadhifa Allya Tsana",
+        "stok": 6,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F024",
+        "judul": "Dikta & Hukum",
+        "penulis": "Dhia'an Farah",
+        "stok": 10,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F025",
+        "judul": "Aroma Karsa",
+        "penulis": "Dee Lestari",
+        "stok": 5,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "C003",
+        "judul": "Dunia Sophie",
+        "penulis": "Jostein Gaarder",
+        "stok": 4,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C004",
+        "judul": "Seni Hidup Minimalis",
+        "penulis": "Francine Jay",
+        "stok": 9,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C005",
+        "judul": "Sejarah Filsafat Barat",
+        "penulis": "Bertrand Russell",
+        "stok": 3,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C006",
+        "judul": "Filsafat Ilmu: Sebuah Pengantar Populer",
+        "penulis": "Jujun S. Suriasumantri",
+        "stok": 8,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C007",
+        "judul": "Beyond Good and Evil",
+        "penulis": "Friedrich Nietzsche",
+        "stok": 5,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C008",
+        "judul": "Republik (The Republic)",
+        "penulis": "Plato",
+        "stok": 6,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C009",
+        "judul": "Etika Nicomachean",
+        "penulis": "Aristoteles",
+        "stok": 4,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C010",
+        "judul": "Meditations",
+        "penulis": "Marcus Aurelius",
+        "stok": 12,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C011",
+        "judul": "Filsafat Eksistensialisme Sartrean",
+        "penulis": "Jean-Paul Sartre",
+        "stok": 3,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C012",
+        "judul": "Kritik atas Rasio Murni",
+        "penulis": "Immanuel Kant",
+        "stok": 2,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C013",
+        "judul": "Myth of Sisyphus",
+        "penulis": "Albert Camus",
+        "stok": 7,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C014",
+        "judul": "Logika Ilmu Menalar",
+        "penulis": "Poespoprodjo",
+        "stok": 6,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C015",
+        "judul": "Pengantar Filsafat Hukum",
+        "penulis": "Prof. Dr. Sukanto",
+        "stok": 5,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C016",
+        "judul": "Filsafat Kebudayaan",
+        "penulis": "C.A. van Peursen",
+        "stok": 4,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C017",
+        "judul": "Seni Memahami Hidup Epikurean",
+        "penulis": "John Carr",
+        "stok": 8,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "A025",
+        "judul": "Pengantar Analisis Real",
+        "penulis": "Robert G. Bartle",
+        "stok": 5,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A026",
+        "judul": "Sistem Informasi Geografis Berbasis Web",
+        "penulis": "Eddy Prahasta",
+        "stok": 6,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A027",
+        "judul": "Dasar-Dasar Penyiaran dan Jurnalistik",
+        "penulis": "Morissan, M.A.",
+        "stok": 8,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A028",
+        "judul": "Desain Grafis Komputer dengan Adobe Illustrator",
+        "penulis": "Hendi Hendratman",
+        "stok": 11,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A029",
+        "judul": "Prinsip-Prinsip Pemasaran Modern",
+        "penulis": "Philip Kotler",
+        "stok": 7,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A030",
+        "judul": "Pengantar Teknik Kimia",
+        "penulis": "Walter L. Badger",
+        "stok": 4,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A031",
+        "judul": "Teori Akuntansi Edisi Revisi",
+        "penulis": "Sofyan Syafri Harahap",
+        "stok": 9,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A032",
+        "judul": "Pemrograman Object-Oriented dengan Java",
+        "penulis": "Informatika Bandung",
+        "stok": 10,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A033",
+        "judul": "Pengantar Ilmu Hukum Indonesia",
+        "penulis": "Prof. Dr. Peter Mahmud",
+        "stok": 13,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A034",
+        "judul": "Manajemen Konstruksi Proyek",
+        "penulis": "Iman Soeharto",
+        "stok": 5,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A035",
+        "judul": "Termodinamika Teknik",
+        "penulis": "Michael J. Moran",
+        "stok": 3,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A036",
+        "judul": "Metode Numerik untuk Komputasi",
+        "penulis": "Rinaldi Munir",
+        "stok": 8,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A037",
+        "judul": "Psikologi Perkembangan Anak",
+        "penulis": "Elizabeth B. Hurlock",
+        "stok": 6,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A038",
+        "judul": "Data Mining: Konsep dan Aplikasi",
+        "penulis": "Kuncoro Nastiti",
+        "stok": 7,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A039",
+        "judul": "Sosiologi Suatu Pengantar",
+        "penulis": "Soerjono Soekanto",
+        "stok": 12,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A040",
+        "judul": "Cyber Security untuk Pemula",
+        "penulis": "Onno W. Purbo",
+        "stok": 15,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A041",
+        "judul": "Arsitektur Komputer Modern",
+        "penulis": "William Stallings",
+        "stok": 5,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "F026",
+        "judul": "Orang-Orang Biasa",
+        "penulis": "Andrea Hirata",
+        "stok": 10,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F027",
+        "judul": "Matahari Minor",
+        "penulis": "Tere Liye",
+        "stok": 14,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F028",
+        "judul": "Ceros dan Batozar",
+        "penulis": "Tere Liye",
+        "stok": 9,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F029",
+        "judul": "Komet Minor",
+        "penulis": "Tere Liye",
+        "stok": 8,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F030",
+        "judul": "Rapijali",
+        "penulis": "Dee Lestari",
+        "stok": 11,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F031",
+        "judul": "Home Sweet Loan",
+        "penulis": "Almira Bastari",
+        "stok": 7,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F032",
+        "judul": "Resign!",
+        "penulis": "Almira Bastari",
+        "stok": 6,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F033",
+        "judul": "Ganjil Genap",
+        "penulis": "Almira Bastari",
+        "stok": 8,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F034",
+        "judul": "Amba",
+        "penulis": "Laksmi Pamuntjak",
+        "stok": 5,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F035",
+        "judul": "Entrok",
+        "penulis": "Okky Madasari",
+        "stok": 4,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F036",
+        "judul": "Teologi Kopi",
+        "penulis": "Dee Lestari",
+        "stok": 10,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F037",
+        "judul": "Sirkus Pohon",
+        "penulis": "Andrea Hirata",
+        "stok": 12,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F038",
+        "judul": "9 Summers 10 Autumns",
+        "penulis": "Iwan Setyawan",
+        "stok": 9,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F039",
+        "judul": "Sebuah Seni untuk Memahami Kekasih",
+        "penulis": "Brian Khrisna",
+        "stok": 11,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F040",
+        "judul": "Dua Garis Biru",
+        "penulis": "Gina S. Noer",
+        "stok": 6,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F041",
+        "judul": "Kkn di Desa Penari",
+        "penulis": "SimpleMan",
+        "stok": 15,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F042",
+        "judul": "Sewu Dino",
+        "penulis": "SimpleMan",
+        "stok": 13,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "C018",
+        "judul": "Seni Retorika",
+        "penulis": "Aristoteles",
+        "stok": 6,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C019",
+        "judul": "Thus Spoke Zarathustra",
+        "penulis": "Friedrich Nietzsche",
+        "stok": 4,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C020",
+        "judul": "The Stranger",
+        "penulis": "Albert Camus",
+        "stok": 8,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C021",
+        "judul": "Being and Nothingness",
+        "penulis": "Jean-Paul Sartre",
+        "stok": 2,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C022",
+        "judul": "Filsafat Kebahagiaan",
+        "penulis": "Al-Ghazali",
+        "stok": 9,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C023",
+        "judul": "Tahafut al-Falasifah",
+        "penulis": "Al-Ghazali",
+        "stok": 5,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C024",
+        "judul": "Filsafat Moral: Kebajikan dan Kewajiban",
+        "penulis": "James Rachels",
+        "stok": 7,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C025",
+        "judul": "Discourse on Method",
+        "penulis": "Rene Descartes",
+        "stok": 6,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C026",
+        "judul": "Leviathan",
+        "penulis": "Thomas Hobbes",
+        "stok": 3,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C027",
+        "judul": "The Social Contract",
+        "penulis": "Jean-Jacques Rousseau",
+        "stok": 5,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C028",
+        "judul": "Filsafat Sejarah",
+        "penulis": "G.W.F. Hegel",
+        "stok": 4,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C029",
+        "judul": "Das Kapital (Ringkasan Populer)",
+        "penulis": "Karl Marx",
+        "stok": 5,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C030",
+        "judul": "Simulacra and Simulation",
+        "penulis": "Jean Baudrillard",
+        "stok": 4,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C031",
+        "judul": "Madness and Civilization",
+        "penulis": "Michel Foucault",
+        "stok": 6,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C032",
+        "judul": "Filsafat Bahasa dan Semiotika",
+        "penulis": "Umberto Eco",
+        "stok": 3,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C033",
+        "judul": "Seni Hidup Damai Bersama Taoisme",
+        "penulis": "Lao Tzu",
+        "stok": 8,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "A042",
+        "judul": "Pengantar Aljabar Linear Elemen",
+        "penulis": "Howard Anton",
+        "stok": 6,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A043",
+        "judul": "Komunikasi Massa: Sebuah Pengantar",
+        "penulis": "Prof. Dr. Hafied Cangara",
+        "stok": 8,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A044",
+        "judul": "Dasar-Dasar Penulisan Karya Ilmiah",
+        "penulis": "Prof. Dr. Gorys Keraf",
+        "stok": 12,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A045",
+        "judul": "Pemrograman Mobile Android dengan Flutter",
+        "penulis": "Nazruddin Safaat H.",
+        "stok": 10,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A046",
+        "judul": "Pengantar Ilmu Hukum dan PTHI",
+        "penulis": "R. Soeroso, S.H.",
+        "stok": 7,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A047",
+        "judul": "Teori Makroekonomi Modern",
+        "penulis": "Sadono Sukirno",
+        "stok": 5,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A048",
+        "judul": "Mikrokontroler Arduino untuk Pemula",
+        "penulis": "Syahban Rangkuti",
+        "stok": 9,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A049",
+        "judul": "Sistem Manajemen Lingkungan ISO 14001",
+        "penulis": "Dr. Anwar Hadi",
+        "stok": 4,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A050",
+        "judul": "Manajemen Sumber Daya Manusia",
+        "penulis": "Prof. Dr. Malayu S.P. Hasibuan",
+        "stok": 14,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A051",
+        "judul": "Pengantar Biologi Umum",
+        "penulis": "Campbell & Reece",
+        "stok": 3,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A052",
+        "judul": "Dasar-Dasar Dinamika Struktur",
+        "penulis": "Ray W. Clough",
+        "stok": 5,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A053",
+        "judul": "Analisis Regresi dalam Penelitian",
+        "penulis": "Prof. Dr. Sudjana",
+        "stok": 8,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A054",
+        "judul": "Dasar Aliran Fluida Teknik",
+        "penulis": "Victor L. Streeter",
+        "stok": 6,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A055",
+        "judul": "Pengantar Antropologi Sosial",
+        "penulis": "Prof. Dr. Koentjaraningrat",
+        "stok": 11,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A056",
+        "judul": "Cloud Computing: Konsep dan Praktik",
+        "penulis": "Iwan Sofyan",
+        "stok": 7,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A057",
+        "judul": "Metodologi Penelitian Keperawatan",
+        "penulis": "Prof. Dr. Nursalam",
+        "stok": 9,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A058",
+        "judul": "Pengantar Geologi Fisik",
+        "penulis": "Dr. Ir. Sukandarrumidi",
+        "stok": 4,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A059",
+        "judul": "Manajemen Keuangan Perusahaan",
+        "penulis": "Dr. Lukas Setia Atmaja",
+        "stok": 13,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A060",
+        "judul": "Pengantar Hubungan Internasional",
+        "penulis": "Anak Agung Banyu Perwita",
+        "stok": 8,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A061",
+        "judul": "Dasar Teknik Kendali Otomatis",
+        "penulis": "Katsuhiko Ogata",
+        "stok": 5,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A062",
+        "judul": "Teori Portofolio dan Analisis Investasi",
+        "penulis": "Prof. Dr. Jogiyanto",
+        "stok": 10,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A063",
+        "judul": "Pengantar Ilmu Komunikasi",
+        "penulis": "Prof. Deddy Mulyana",
+        "stok": 15,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A064",
+        "judul": "Pemrograman Fungsional dengan Haskell",
+        "penulis": "Rahmat M. Samik",
+        "stok": 4,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A065",
+        "judul": "Dasar Perancangan Pabrik Kimia",
+        "penulis": "Max S. Peters",
+        "stok": 3,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A066",
+        "judul": "Hukum Dagang Indonesia",
+        "penulis": "Prof. R. Subekti, S.H.",
+        "stok": 12,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A067",
+        "judul": "Pengantar Sosiologi Hukum",
+        "penulis": "Prof. Dr. Soerjono Soekanto",
+        "stok": 9,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A068",
+        "judul": "Teknik Pondasi Sipil Edisi 2",
+        "penulis": "Dr. Hary Christady Hardiyatmo",
+        "stok": 6,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A069",
+        "judul": "Pengantar Teori Graf",
+        "penulis": "Dr. Drs. Slamin",
+        "stok": 5,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "F043",
+        "judul": "Komet (Serial Dunia Paralel)",
+        "penulis": "Tere Liye",
+        "stok": 11,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F044",
+        "judul": "Selena (Serial Dunia Paralel)",
+        "penulis": "Tere Liye",
+        "stok": 14,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F045",
+        "judul": "Nebula (Serial Dunia Paralel)",
+        "penulis": "Tere Liye",
+        "stok": 12,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F046",
+        "judul": "Si Putih (Serial Dunia Paralel)",
+        "penulis": "Tere Liye",
+        "stok": 9,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F047",
+        "judul": "Lumpu (Serial Dunia Paralel)",
+        "penulis": "Tere Liye",
+        "stok": 10,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F048",
+        "judul": "Bumi yang Restu",
+        "penulis": "Ahmad Tohari",
+        "stok": 5,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F049",
+        "judul": "Kubah",
+        "penulis": "Ahmad Tohari",
+        "stok": 7,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F050",
+        "judul": "Bekisar Merah",
+        "penulis": "Ahmad Tohari",
+        "stok": 6,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F051",
+        "judul": "Rumah Kaca",
+        "penulis": "Pramoedya Ananta Toer",
+        "stok": 8,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F052",
+        "judul": "Jejak Langkah",
+        "penulis": "Pramoedya Ananta Toer",
+        "stok": 9,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F053",
+        "judul": "Gadis Pantai",
+        "penulis": "Pramoedya Ananta Toer",
+        "stok": 7,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F054",
+        "judul": "Manusia Semu",
+        "penulis": "Seno Gumira Ajidarma",
+        "stok": 4,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F055",
+        "judul": "Saksi Mata",
+        "penulis": "Seno Gumira Ajidarma",
+        "stok": 6,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F056",
+        "judul": "Kitab Omong Kosong",
+        "penulis": "Seno Gumira Ajidarma",
+        "stok": 5,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F057",
+        "judul": "Bilangan Fu",
+        "penulis": "Ayu Utami",
+        "stok": 5,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F058",
+        "judul": "Larung",
+        "penulis": "Ayu Utami",
+        "stok": 8,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F059",
+        "judul": "Supernova: Akar",
+        "penulis": "Dee Lestari",
+        "stok": 10,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F060",
+        "judul": "Supernova: Petir",
+        "penulis": "Dee Lestari",
+        "stok": 11,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F061",
+        "judul": "Supernova: Partikel",
+        "penulis": "Dee Lestari",
+        "stok": 12,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F062",
+        "judul": "Supernova: Gelombang",
+        "penulis": "Dee Lestari",
+        "stok": 13,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F063",
+        "judul": "Supernova: Inteligensi Embun Pagi",
+        "penulis": "Dee Lestari",
+        "stok": 15,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F064",
+        "judul": "Maryam",
+        "penulis": "Okky Madasari",
+        "stok": 6,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F065",
+        "judul": "Pasung Jiwa",
+        "penulis": "Okky Madasari",
+        "stok": 7,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F066",
+        "judul": "Kerumunan Terakhir",
+        "penulis": "Okky Madasari",
+        "stok": 5,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F067",
+        "judul": "The Architecture of Love",
+        "penulis": "Ika Natassa",
+        "stok": 14,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F068",
+        "judul": "Critical Eleven",
+        "penulis": "Ika Natassa",
+        "stok": 13,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F069",
+        "judul": "Antologi Rasa",
+        "penulis": "Ika Natassa",
+        "stok": 11,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F070",
+        "judul": "Twivortiare",
+        "penulis": "Ika Natassa",
+        "stok": 9,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "C034",
+        "judul": "Zarathustra Berbicara",
+        "penulis": "Friedrich Nietzsche",
+        "stok": 4,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C035",
+        "judul": "Ecce Homo: Lihatlah Manusia",
+        "penulis": "Friedrich Nietzsche",
+        "stok": 5,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C036",
+        "judul": "Pemberontak (The Rebel)",
+        "penulis": "Albert Camus",
+        "stok": 6,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C037",
+        "judul": "Sampar (The Plague)",
+        "penulis": "Albert Camus",
+        "stok": 8,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C038",
+        "judul": "Filsafat Ketuhanan",
+        "penulis": "Driyarkara",
+        "stok": 7,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C039",
+        "judul": "Driyarkara tentang Manusia",
+        "penulis": "Driyarkara",
+        "stok": 6,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C040",
+        "judul": "Filsafat Kebudayaan dan Pendidikan",
+        "penulis": "Driyarkara",
+        "stok": 5,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C041",
+        "judul": "Menalar Alasan: Esai Filsafat Praktis",
+        "penulis": "Franz Magnis-Suseno",
+        "stok": 9,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C042",
+        "judul": "Etika Politik",
+        "penulis": "Franz Magnis-Suseno",
+        "stok": 11,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C043",
+        "judul": "Pemikiran Karl Marx: Dari Sosialisme Utopis ke Kritik",
+        "penulis": "Franz Magnis-Suseno",
+        "stok": 8,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C044",
+        "judul": "Filsafat sebagai Ilmu Kritis",
+        "penulis": "Franz Magnis-Suseno",
+        "stok": 7,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C045",
+        "judul": "Dunia Semiotika",
+        "penulis": "Umberto Eco",
+        "stok": 4,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C046",
+        "judul": "Arkeologi Pengetahuan",
+        "penulis": "Michel Foucault",
+        "stok": 5,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C047",
+        "judul": "Disiplin dan Hukuman: Lahirnya Penjara",
+        "penulis": "Michel Foucault",
+        "stok": 6,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C048",
+        "judul": "Kata dan Benda (The Order of Things)",
+        "penulis": "Michel Foucault",
+        "stok": 4,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C049",
+        "judul": "Masyarakat Tontonan (Society of the Spectacle)",
+        "penulis": "Guy Debord",
+        "stok": 5,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C050",
+        "judul": "Satu Dimensi Manusia",
+        "penulis": "Herbert Marcuse",
+        "stok": 3,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C051",
+        "judul": "Eros dan Peradaban",
+        "penulis": "Herbert Marcuse",
+        "stok": 4,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C052",
+        "judul": "Teori Kritis Sekolah Frankfurt",
+        "penulis": "Rolf Wiggershaus",
+        "stok": 5,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C053",
+        "judul": "Kritik Atas Akal Budi Praktis",
+        "penulis": "Immanuel Kant",
+        "stok": 3,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C054",
+        "judul": "Kritik Atas Daya Pertimbangan",
+        "penulis": "Immanuel Kant",
+        "stok": 3,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C055",
+        "judul": "Filsafat Eksistensialisme",
+        "penulis": "Søren Kierkegaard",
+        "stok": 6,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C056",
+        "judul": "Kritik Esensialisme Kontemporer",
+        "penulis": "Jacques Derrida",
+        "stok": 4,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C057",
+        "judul": "Dekonstruksi Derridean",
+        "penulis": "Jacques Derrida",
+        "stok": 4,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C058",
+        "judul": "Filsafat Pragmatisme",
+        "penulis": "William James",
+        "stok": 7,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C059",
+        "judul": "Pengalaman dan Alam",
+        "penulis": "John Dewey",
+        "stok": 6,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C060",
+        "judul": "Demokrasi dan Pendidikan",
+        "penulis": "John Dewey",
+        "stok": 8,
+        "kategori": "Filsafat"
+    },
+    {
+        "kode": "C061",
+        "judul": "Seni Hidup Bahagia Gaya Epiktetos",
+        "penulis": "Epiktetos",
+        "stok": 10,
+        "kategori": "Filsafat"
     }
 ]
