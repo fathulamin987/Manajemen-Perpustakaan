@@ -1,55 +1,239 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>Data Mahasiswa</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
 </head>
+
 <body>
 
-<div class="sidebar">
-    <div class="sidebar-brand">Sistem Perpustakaan</div>
-    <div class="sidebar-menu">
-        <a href="/">Dashboard</a>
-        <a href="/buku">Data Buku</a>
-        <a href="/mahasiswa" class="active">Data Mahasiswa</a>
-        <a href="/peminjaman">Peminjaman</a>
-        <a href="/riwayat">Riwayat</a>
-    </div>
-</div>
+    <!-- TOPBAR -->
+    <header class="topbar">
 
-<div class="main-content">
-    <h1>Kelola Data Mahasiswa</h1>
+        <div class="topbar-left">
 
-    <form method="POST" action="/tambah_mahasiswa">
-        <input type="text" name="nim" placeholder="Nomor Induk Mahasiswa (NIM)" required>
-        <input type="text" name="nama" placeholder="Nama Lengkap" required>
-        <input type="text" name="prodi" placeholder="Program Studi" required>
-        <button type="submit">Tambah</button>
-    </form>
+            <div class="logo-box">
+                🎓
+            </div>
 
-    <div class="table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>NIM</th>
-                    <th>Nama</th>
-                    <th>Program Studi</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in mahasiswa %}
-                <tr>
-                    <td style="font-weight: 600; color: var(--text-title);">{{ item.nim }}</td>
-                    <td>{{ item.nama }}</td>
-                    <td>{{ item.prodi }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</div>
+            <div>
+
+                <h2 class="logo-title">
+                    Library Management
+                </h2>
+
+                <span class="logo-subtitle">
+                    Sistem Informasi Perpustakaan
+                </span>
+
+            </div>
+
+        </div>
+
+        <nav class="topbar-menu">
+
+            <a href="/">
+                Dashboard
+            </a>
+
+            <a href="/buku">
+                Buku
+            </a>
+
+            <a href="/mahasiswa" class="menu-active">
+                Mahasiswa
+            </a>
+
+            <a href="/peminjaman">
+                Peminjaman
+            </a>
+
+            <a href="/riwayat">
+                Riwayat
+            </a>
+
+        </nav>
+
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-section">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                🎓 Kelola Data Mahasiswa
+            </span>
+
+            <h1>
+                Data Mahasiswa Perpustakaan
+            </h1>
+
+            <p>
+                Tambahkan dan kelola data mahasiswa
+                yang terdaftar dalam sistem perpustakaan.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CONTENT -->
+    <main class="dashboard-wrapper">
+
+        <!-- FORM -->
+        <section class="form-modern">
+
+            <div class="section-header-modern">
+
+                <div>
+
+                    <h2>
+                        Tambah Mahasiswa
+                    </h2>
+
+                    <p>
+                        Lengkapi data mahasiswa baru
+                    </p>
+
+                </div>
+
+            </div>
+
+            <form method="POST"
+                  action="/tambah_mahasiswa"
+                  class="form-grid-modern">
+
+                <input type="text"
+                       name="nim"
+                       placeholder="Nomor Induk Mahasiswa (NIM)"
+                       required>
+
+                <input type="text"
+                       name="nama"
+                       placeholder="Nama Lengkap"
+                       required>
+
+                <input type="text"
+                       name="prodi"
+                       placeholder="Program Studi"
+                       required>
+
+                <button type="submit"
+                        class="btn-submit-modern">
+
+                    + Tambah Mahasiswa
+
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- TABLE -->
+        <section class="table-modern-section">
+
+            <div class="section-header-modern">
+
+                <div>
+
+                    <h2>
+                        Daftar Mahasiswa
+                    </h2>
+
+                    <p>
+                        Data mahasiswa yang terdaftar
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="table-modern-wrapper">
+
+                <table class="modern-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                NIM
+                            </th>
+
+                            <th>
+                                Nama Mahasiswa
+                            </th>
+
+                            <th>
+                                Program Studi
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for item in mahasiswa %}
+
+                        <tr>
+
+                            <td class="table-highlight">
+
+                                {{ item.nim }}
+
+                            </td>
+
+                            <td>
+
+                                {{ item.nama }}
+
+                            </td>
+
+                            <td>
+
+                                {{ item.prodi }}
+
+                            </td>
+
+                        </tr>
+
+                        {% else %}
+
+                        <tr>
+
+                            <td colspan="3"
+                                class="empty-table">
+
+                                Tidak ada data mahasiswa
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
 
 </body>
+
 </html>

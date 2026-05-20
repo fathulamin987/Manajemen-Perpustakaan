@@ -1,68 +1,286 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peminjaman</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Peminjaman Buku</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
 </head>
+
 <body>
 
-<div class="sidebar">
-    <div class="sidebar-brand">Sistem Perpustakaan</div>
-    <div class="sidebar-menu">
-        <a href="/">Dashboard</a>
-        <a href="/buku">Data Buku</a>
-        <a href="/mahasiswa">Data Mahasiswa</a>
-        <a href="/peminjaman" class="active">Peminjaman</a>
-        <a href="/riwayat">Riwayat</a>
-    </div>
-</div>
+    <!-- TOPBAR -->
+    <header class="topbar">
 
-<div class="main-content">
-    <h1>Peminjaman Aktif</h1>
+        <div class="topbar-left">
 
-    <form method="POST" action="/tambah_peminjaman">
-        <select name="nim" required>
-            <option value="">Pilih Mahasiswa Peminjam</option>
-            {% for item in mahasiswa %}
-            <option value="{{ item.nim }}">{{ item.nama }}</option>
-            {% endfor %}
-        </select>
+            <div class="logo-box">
+                🔄
+            </div>
 
-        <select name="kode_buku" required>
-            <option value="">Pilih Buku yang Dipinjam</option>
-            {% for item in buku %}
-            <option value="{{ item.kode }}">{{ item.judul }}</option>
-            {% endfor %}
-        </select>
+            <div>
 
-        <button type="submit">Proses Pinjam</button>
-    </form>
+                <h2 class="logo-title">
+                    Library Management
+                </h2>
 
-    <div class="table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>NIM Peminjam</th>
-                    <th>Kode Buku</th>
-                    <th style="width: 150px;">Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in peminjaman %}
-                <tr>
-                    <td>{{ item.nim }}</td>
-                    <td style="font-weight: 600; color: var(--text-title);">{{ item.kode_buku }}</td>
-                    <td>
-                        <a href="/pengembalian/{{ item.kode_buku }}">Selesai</a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</div>
+                <span class="logo-subtitle">
+                    Sistem Informasi Perpustakaan
+                </span>
+
+            </div>
+
+        </div>
+
+        <nav class="topbar-menu">
+
+            <a href="/">
+                Dashboard
+            </a>
+
+            <a href="/buku">
+                Buku
+            </a>
+
+            <a href="/mahasiswa">
+                Mahasiswa
+            </a>
+
+            <a href="/peminjaman"
+               class="menu-active">
+
+                Peminjaman
+
+            </a>
+
+            <a href="/riwayat">
+                Riwayat
+            </a>
+
+        </nav>
+
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-section">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                🔄 Kelola Peminjaman Buku
+            </span>
+
+            <h1>
+                Sistem Peminjaman Aktif
+            </h1>
+
+            <p>
+                Kelola transaksi peminjaman
+                buku mahasiswa secara modern
+                menggunakan Flask dan ADT.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CONTENT -->
+    <main class="dashboard-wrapper">
+
+        <!-- FORM -->
+        <section class="form-modern">
+
+            <div class="section-header-modern">
+
+                <div>
+
+                    <h2>
+                        Tambah Peminjaman
+                    </h2>
+
+                    <p>
+                        Proses peminjaman buku mahasiswa
+                    </p>
+
+                </div>
+
+            </div>
+
+            <form method="POST"
+                  action="/tambah_peminjaman"
+                  class="form-grid-modern">
+
+                <!-- MAHASISWA -->
+                <select name="nim" required>
+
+                    <option value="">
+                        Pilih Mahasiswa
+                    </option>
+
+                    {% for item in mahasiswa %}
+
+                    <option value="{{ item.nim }}">
+
+                        {{ item.nama }}
+
+                    </option>
+
+                    {% endfor %}
+
+                </select>
+
+                <!-- BUKU -->
+                <select name="kode_buku" required>
+
+                    <option value="">
+                        Pilih Buku
+                    </option>
+
+                    {% for item in buku %}
+
+                    <option value="{{ item.kode }}">
+
+                        {{ item.judul }}
+
+                    </option>
+
+                    {% endfor %}
+
+                </select>
+
+                <!-- BUTTON -->
+                <button type="submit"
+                        class="btn-submit-modern">
+
+                    + Proses Pinjam
+
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- TABLE -->
+        <section class="table-modern-section">
+
+            <div class="section-header-modern">
+
+                <div>
+
+                    <h2>
+                        Data Peminjaman Aktif
+                    </h2>
+
+                    <p>
+                        Daftar buku yang sedang dipinjam
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="table-modern-wrapper">
+
+                <table class="modern-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                NIM Mahasiswa
+                            </th>
+
+                            <th>
+                                Kode Buku
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Aksi
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for item in peminjaman %}
+
+                        <tr>
+
+                            <td class="table-highlight">
+
+                                {{ item.nim }}
+
+                            </td>
+
+                            <td>
+
+                                {{ item.kode_buku }}
+
+                            </td>
+
+                            <td>
+
+                                <span class="status-active">
+
+                                    Dipinjam
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <a href="/pengembalian/{{ item.kode_buku }}"
+                                   class="btn-finish-modern">
+
+                                    Selesai
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                        {% else %}
+
+                        <tr>
+
+                            <td colspan="4"
+                                class="empty-table">
+
+                                Tidak ada peminjaman aktif
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
 
 </body>
+
 </html>

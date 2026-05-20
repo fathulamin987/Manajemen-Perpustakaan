@@ -1,44 +1,196 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Perpustakaan</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard Perpustakaan</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
 </head>
-<body>
 
-<div class="sidebar">
-    <div class="sidebar-brand">Sistem Perpustakaan</div>
-    <div class="sidebar-menu">
-        <a href="/" class="active">Dashboard</a>
-        <a href="/buku">Data Buku</a>
-        <a href="/mahasiswa">Data Mahasiswa</a>
-        <a href="/peminjaman">Peminjaman</a>
-        <a href="/riwayat">Riwayat</a>
-    </div>
-</div>
+<body class="dashboard-page">
 
-<div class="main-content">
-    <h1>Dashboard Utama</h1>
+    <!-- TOPBAR -->
+    <header class="topbar">
 
-    <div class="metrics-grid">
-        <div class="metric-card">
-            <h2>Total Koleksi Buku</h2>
-            <p>{{ total_buku }}</p>
+        <div class="topbar-left">
+
+            <div class="logo-box">
+                📚
+            </div>
+
+            <div>
+
+                <h2 class="logo-title">
+                    Library Management
+                </h2>
+
+                <span class="logo-subtitle">
+                    Sistem Informasi Perpustakaan
+                </span>
+
+            </div>
+
         </div>
 
-        <div class="metric-card">
-            <h2>Mahasiswa Terdaftar</h2>
-            <p>{{ total_mahasiswa }}</p>
+        <nav class="topbar-menu">
+
+            <a href="/" class="menu-active">
+                Dashboard
+            </a>
+
+            <a href="/buku">
+                Buku
+            </a>
+
+            <a href="/mahasiswa">
+                Mahasiswa
+            </a>
+
+            <a href="/peminjaman">
+                Peminjaman
+            </a>
+
+            <a href="/riwayat">
+                Riwayat
+            </a>
+
+        </nav>
+
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-section">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                🚀 Sistem Berbasis ADT & Flask
+            </span>
+
+            <h1>
+                Dashboard Perpustakaan Modern
+            </h1>
+
+            <p>
+                Kelola buku, mahasiswa, peminjaman,
+                dan riwayat menggunakan Flask
+                dan Struktur Data.
+            </p>
+
         </div>
 
-        <div class="metric-card">
-            <h2>Sedang dipinjam</h2>
-            <p>{{ total_peminjaman }}</p>
-        </div>
-    </div>
-</div>
+    </section>
+
+    <!-- CONTENT -->
+    <main class="dashboard-wrapper">
+
+        <!-- STATS -->
+        <section class="dashboard-stats">
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon blue">
+                    📘
+                </div>
+
+                <div>
+
+                    <span>Total Buku</span>
+
+                    <h2>{{ total_buku }}</h2>
+
+                </div>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon green">
+                    🎓
+                </div>
+
+                <div>
+
+                    <span>Mahasiswa</span>
+
+                    <h2>{{ total_mahasiswa }}</h2>
+
+                </div>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon orange">
+                    🔄
+                </div>
+
+                <div>
+
+                    <span>Dipinjam</span>
+
+                    <h2>{{ total_peminjaman }}</h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FEATURE -->
+        <section class="feature-grid">
+
+            <div class="feature-card">
+
+                <h3>
+                    Binary Tree
+                </h3>
+
+                <p>
+                    Digunakan untuk traversal
+                    dan pengurutan data buku.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>
+                    Hashing
+                </h3>
+
+                <p>
+                    Digunakan untuk pencarian
+                    data buku berdasarkan kode.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>
+                    Stack Riwayat
+                </h3>
+
+                <p>
+                    Digunakan untuk menyimpan
+                    histori pengembalian buku.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
 
 </body>
+
 </html>
