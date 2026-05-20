@@ -2,17 +2,10 @@
 <html lang="id">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Buku</title>
-
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -23,45 +16,23 @@
         <div class="topbar-left">
 
             <div class="logo-box">
-                <img src="{{ url_for('static', filename='images/logo_perpus.png') }}" alt="Logo Perpustakaan" class="logo-img">
+                <img src="{{ url_for('static', filename='images/logo_perpus.png') }}" alt="Logo Perpustakaan"
+                    class="logo-img">
             </div>
 
             <div>
-
-                <h2 class="logo-title">
-                    Library Management
-                </h2>
-
-                <span class="logo-subtitle">
-                    Sistem Informasi Perpustakaan
-                </span>
-
+                <h2 class="logo-title">Library Management</h2>
+                <span class="logo-subtitle">Sistem Informasi Perpustakaan</span>
             </div>
 
         </div>
 
         <nav class="topbar-menu">
-
-            <a href="/">
-                Dashboard
-            </a>
-
-            <a href="/buku" class="menu-active">
-                Buku
-            </a>
-
-            <a href="/mahasiswa">
-                Mahasiswa
-            </a>
-
-            <a href="/peminjaman">
-                Peminjaman
-            </a>
-
-            <a href="/riwayat">
-                Riwayat
-            </a>
-
+            <a href="/">Dashboard</a>
+            <a href="/buku" class="menu-active">Buku</a>
+            <a href="/mahasiswa">Mahasiswa</a>
+            <a href="/peminjaman">Peminjaman</a>
+            <a href="/riwayat">Riwayat</a>
         </nav>
 
     </header>
@@ -70,20 +41,14 @@
     <section class="hero-section">
 
         <div class="hero-content">
+            <span class="hero-badge">Update Data Buku</span>
 
-            <span class="hero-badge">
-                Update Data Buku
-            </span>
-
-            <h1>
-                Edit Informasi Buku
-            </h1>
+            <h1>Edit Informasi Buku</h1>
 
             <p>
                 Perbarui data buku perpustakaan
                 dengan sistem berbasis Flask dan ADT.
             </p>
-
         </div>
 
     </section>
@@ -95,110 +60,58 @@
         <section class="edit-modern-card">
 
             <div class="section-header-modern">
-
                 <div>
-
-                    <h2>
-                        Form Edit Buku
-                    </h2>
-
-                    <p>
-                        Perbarui data buku perpustakaan
-                    </p>
-
+                    <h2>Form Edit Buku</h2>
+                    <p>Perbarui data buku perpustakaan</p>
                 </div>
-
             </div>
 
-            <form method="POST"
-                  action="/update_buku/{{ buku.kode }}"
-                  class="edit-form-modern">
+            <form method="POST" action="/update_buku/{{ buku.kode }}" class="edit-form-modern">
 
                 <!-- KODE -->
                 <div class="input-modern-group">
+                    <label>Kode Buku</label>
 
-                    <label>
-                        Kode Buku
-                    </label>
-
-                    <input type="text"
-                           value="{{ buku.kode }}"
-                           disabled
-                           class="input-disabled">
-
+                    <input type="text" value="{{ buku.kode }}" disabled class="input-disabled">
                 </div>
 
                 <!-- JUDUL -->
                 <div class="input-modern-group">
+                    <label>Judul Buku</label>
 
-                    <label>
-                        Judul Buku
-                    </label>
-
-                    <input type="text"
-                           name="judul"
-                           value="{{ buku.judul }}"
-                           required>
-
+                    <input type="text" name="judul" value="{{ buku.judul }}" required>
                 </div>
 
                 <!-- PENULIS -->
                 <div class="input-modern-group">
+                    <label>Nama Penulis</label>
 
-                    <label>
-                        Nama Penulis
-                    </label>
-
-                    <input type="text"
-                           name="penulis"
-                           value="{{ buku.penulis }}"
-                           required>
-
+                    <input type="text" name="penulis" value="{{ buku.penulis }}" required>
                 </div>
 
                 <!-- STOK -->
                 <div class="input-modern-group">
+                    <label>Jumlah Stok</label>
 
-                    <label>
-                        Jumlah Stok
-                    </label>
-
-                    <input type="number"
-                           name="stok"
-                           value="{{ buku.stok }}"
-                           required>
-
+                    <input type="number" name="stok" value="{{ buku.stok }}" required>
                 </div>
 
                 <!-- KATEGORI -->
                 <div class="input-modern-group">
 
-                    <label>
-                        Kategori Buku
-                    </label>
+                    <label>Kategori Buku</label>
 
                     <select name="kategori" required>
 
-                        <option value="">
-                            Pilih Kategori
-                        </option>
+                        <option value="">Pilih Kategori</option>
 
-                        <option value="Akademik & Teknis"
-                        {% if buku.kategori == 'Akademik & Teknis' %}
-                        selected
-                        {% endif %}>
-
+                        <option value="Akademik & Teknis" {% if buku.kategori=='Akademik & Teknis' %}selected{% endif
+                            %}>
                             Akademik & Teknis
-
                         </option>
 
-                        <option value="Fiksi & Sastra"
-                        {% if buku.kategori == 'Fiksi & Sastra' %}
-                        selected
-                        {% endif %}>
-
+                        <option value="Fiksi & Sastra" {% if buku.kategori=='Fiksi & Sastra' %}selected{% endif %}>
                             Fiksi & Sastra
-
                         </option>
 
                     </select>
@@ -208,18 +121,12 @@
                 <!-- BUTTON -->
                 <div class="edit-button-group">
 
-                    <a href="/buku"
-                       class="btn-cancel-modern">
-
+                    <a href="/buku" class="btn-cancel-modern">
                         Kembali
-
                     </a>
 
-                    <button type="submit"
-                            class="btn-save-modern">
-
+                    <button type="submit" class="btn-save-modern">
                         Update Buku
-
                     </button>
 
                 </div>

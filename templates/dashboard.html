@@ -2,17 +2,11 @@
 <html lang="id">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Perpustakaan</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body class="dashboard-page">
@@ -23,45 +17,23 @@
         <div class="topbar-left">
 
             <div class="logo-box">
-                <img src="{{ url_for('static', filename='images/logo_perpus.png') }}" alt="Logo Perpustakaan" class="logo-img">
+                <img src="{{ url_for('static', filename='images/logo_perpus.png') }}" alt="Logo Perpustakaan"
+                    class="logo-img">
             </div>
 
             <div>
-
-                <h2 class="logo-title">
-                    Library Management
-                </h2>
-
-                <span class="logo-subtitle">
-                    Sistem Informasi Perpustakaan
-                </span>
-
+                <h2 class="logo-title">Library Management</h2>
+                <span class="logo-subtitle">Sistem Informasi Perpustakaan</span>
             </div>
 
         </div>
 
         <nav class="topbar-menu">
-
-            <a href="/" class="menu-active">
-                Dashboard
-            </a>
-
-            <a href="/buku">
-                Buku
-            </a>
-
-            <a href="/mahasiswa">
-                Mahasiswa
-            </a>
-
-            <a href="/peminjaman">
-                Peminjaman
-            </a>
-
-            <a href="/riwayat">
-                Riwayat
-            </a>
-
+            <a href="/" class="menu-active">Dashboard</a>
+            <a href="/buku">Buku</a>
+            <a href="/mahasiswa">Mahasiswa</a>
+            <a href="/peminjaman">Peminjaman</a>
+            <a href="/riwayat">Riwayat</a>
         </nav>
 
     </header>
@@ -75,9 +47,7 @@
                 Sistem Berbasis ADT & Flask
             </span>
 
-            <h1>
-                Dashboard Perpustakaan Modern
-            </h1>
+            <h1>Dashboard Perpustakaan Modern</h1>
 
             <p>
                 Kelola buku, mahasiswa, peminjaman,
@@ -96,39 +66,30 @@
         <section class="dashboard-stats">
 
             <div class="dashboard-card">
-
                 <div>
-
-                    <span><h3>Total Buku</h3></span>
-
+                    <span>
+                        <h3>Total Buku</h3>
+                    </span>
                     <h2>{{ total_buku }}</h2>
-
                 </div>
-
             </div>
 
             <div class="dashboard-card">
-
                 <div>
-
-                    <span><h3>Mahasiswa</h3></span>
-
+                    <span>
+                        <h3>Mahasiswa</h3>
+                    </span>
                     <h2>{{ total_mahasiswa }}</h2>
-
                 </div>
-
             </div>
 
             <div class="dashboard-card">
-
                 <div>
-
-                    <span><h3>Dipinjam</h3></span>
-
+                    <span>
+                        <h3>Dipinjam</h3>
+                    </span>
                     <h2>{{ total_peminjaman }}</h2>
-
                 </div>
-
             </div>
 
         </section>
@@ -137,42 +98,30 @@
         <section class="feature-grid">
 
             <div class="feature-card">
-
-                <h3>
-                    Binary Tree
-                </h3>
+                <h3>Binary Tree</h3>
 
                 <p>
                     Digunakan untuk traversal
                     dan pengurutan data buku.
                 </p>
-
             </div>
 
             <div class="feature-card">
-
-                <h3>
-                    Hashing
-                </h3>
+                <h3>Hashing</h3>
 
                 <p>
                     Digunakan untuk pencarian
                     data buku berdasarkan kode.
                 </p>
-
             </div>
 
             <div class="feature-card">
-
-                <h3>
-                    Stack Riwayat
-                </h3>
+                <h3>Stack Riwayat</h3>
 
                 <p>
                     Digunakan untuk menyimpan
                     histori pengembalian buku.
                 </p>
-
             </div>
 
         </section>

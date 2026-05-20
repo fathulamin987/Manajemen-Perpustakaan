@@ -13,9 +13,7 @@ from struktur_data.stack_riwayat import StackRiwayat
 
 app = Flask(__name__)
 
-# =========================
 # HELPER JSON
-# =========================
 def baca_json(path):
 
     if not os.path.exists(path):
@@ -30,10 +28,7 @@ def simpan_json(path, data):
     with open(path, "w", encoding="utf-8") as file:
         json.dump(data, file, indent=4)
 
-
-# =========================
 # DASHBOARD
-# =========================
 @app.route("/")
 def dashboard():
 
@@ -48,44 +43,40 @@ def dashboard():
         total_peminjaman=len(peminjaman)
     )
 
-
-# =========================
-# HALAMAN BUKU
-# MENGGUNAKAN:
-# - SEARCHING
-# - BINARY TREE
-# - SORTING
-# =========================
+# HALAMAN BUKU 
 @app.route("/buku")
 def buku():
-
     data_buku = baca_json("data/data_buku.json")
 
-    # SEARCHING ADT
+    # TANGKAP INPUT KEYWORD & KATEGORI DARI HTML
     keyword = request.args.get("keyword", "")
+    kategori_terpilih = request.args.get("kategori", "")
 
+    # PROSES SEARCHING ADT (JIKA ADA KEYWORD)
     if keyword:
         data_buku = cari_buku(data_buku, keyword)
 
     # BINARY TREE ADT
     tree = BinaryTree()
-
     for item in data_buku:
         tree.insert(item)
 
-    # SORTING ADT
+    # SORTING ADT (Mengambil hasil urutan dari BinaryTree)
     data_buku = urutkan_judul(tree.inorder())
 
+    # PROSES FILTER KATEGORI (Dilakukan paling akhir agar tidak tertimpa struktur Tree)
+    if kategori_terpilih:
+        data_buku = [buku for buku in data_buku if buku.get("kategori") == kategori_terpilih]
+
+    # KIRIMKAN VARIABEL KE HTML
     return render_template(
         "buku.html",
         buku=data_buku,
-        keyword=keyword
+        keyword=keyword,
+        kategori_terpilih=kategori_terpilih
     )
 
-
-# =========================
 # TAMBAH BUKU
-# =========================
 @app.route("/tambah_buku", methods=["POST"])
 def tambah_buku():
 
@@ -128,9 +119,7 @@ def edit_buku(kode):
     )
 
 
-# =========================
 # UPDATE BUKU
-# =========================
 @app.route("/update_buku/<kode>", methods=["POST"])
 def update_buku(kode):
 
@@ -279,7 +268,7 @@ def tambah_peminjaman():
     pinjam_baru = {
         "nim": request.form["nim"],
         "kode_buku": request.form["kode_buku"],
-        "durasi": int(request.form["durasi"])  # <- Tambahkan baris ini untuk menangkap durasi
+        "durasi": int(request.form["durasi"])
     }
 
     data_peminjaman.append(pinjam_baru)

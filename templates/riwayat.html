@@ -2,17 +2,13 @@
 <html lang="id">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Riwayat Pengembalian</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -23,43 +19,27 @@
         <div class="topbar-left">
 
             <div class="logo-box">
-                <img src="{{ url_for('static', filename='images/logo_perpus.png') }}" alt="Logo Perpustakaan" class="logo-img">
+                <img src="{{ url_for('static', filename='images/logo_perpus.png') }}" alt="Logo Perpustakaan"
+                    class="logo-img">
             </div>
 
             <div>
-
-                <h2 class="logo-title">
-                    Library Management
-                </h2>
+                <h2 class="logo-title">Library Management</h2>
 
                 <span class="logo-subtitle">
                     Sistem Informasi Perpustakaan
                 </span>
-
             </div>
 
         </div>
 
         <nav class="topbar-menu">
+            <a href="/">Dashboard</a>
+            <a href="/buku">Buku</a>
+            <a href="/mahasiswa">Mahasiswa</a>
+            <a href="/peminjaman">Peminjaman</a>
 
-            <a href="/">
-                Dashboard
-            </a>
-
-            <a href="/buku">
-                Buku
-            </a>
-
-            <a href="/mahasiswa">
-                Mahasiswa
-            </a>
-
-            <a href="/peminjaman">
-                Peminjaman
-            </a>
-
-            <a href="/riwayat"
-               class="menu-active">
+            <a href="/riwayat" class="menu-active">
 
                 Riwayat
 
@@ -78,9 +58,7 @@
                 Riwayat Pengembalian Buku
             </span>
 
-            <h1>
-                Log Pengembalian Buku
-            </h1>
+            <h1>Log Pengembalian Buku</h1>
 
             <p>
                 Riwayat transaksi pengembalian
@@ -99,19 +77,13 @@
         <section class="table-modern-section">
 
             <div class="section-header-modern">
-
                 <div>
-
-                    <h2>
-                        Riwayat Pengembalian
-                    </h2>
+                    <h2>Riwayat Pengembalian</h2>
 
                     <p>
                         Daftar histori buku yang telah dikembalikan
                     </p>
-
                 </div>
-
             </div>
 
             <div class="table-modern-wrapper">
@@ -119,68 +91,44 @@
                 <table class="modern-table">
 
                     <thead>
-
                         <tr>
-
-                            <th>
-                                NIM Mahasiswa
-                            </th>
-
-                            <th>
-                                Kode Buku
-                            </th>
-
-                            <th>
-                                Status
-                            </th>
-
+                            <th>NIM Mahasiswa</th>
+                            <th>Kode Buku</th>
+                            <th>Status</th>
                         </tr>
-
                     </thead>
 
                     <tbody>
 
                         {% for item in riwayat %}
-
                         <tr>
 
                             <td class="table-highlight">
-
                                 {{ item.nim }}
-
                             </td>
 
                             <td>
-
                                 {{ item.kode_buku }}
-
                             </td>
 
                             <td>
-
                                 <span class="status-finished">
-
                                     Dikembalikan
-
                                 </span>
-
                             </td>
 
                         </tr>
 
                         {% else %}
-
                         <tr>
 
-                            <td colspan="3"
-                                class="empty-table">
+                            <td colspan="3" class="empty-table">
 
                                 Belum ada riwayat pengembalian
 
                             </td>
 
                         </tr>
-
                         {% endfor %}
 
                     </tbody>

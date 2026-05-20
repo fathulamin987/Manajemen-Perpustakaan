@@ -5,13 +5,11 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Peminjaman Buku</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 
@@ -23,7 +21,8 @@
         <div class="topbar-left">
 
             <div class="logo-box">
-                <img src="{{ url_for('static', filename='images/logo_perpus.png') }}" alt="Logo Perpustakaan" class="logo-img">
+                <img src="{{ url_for('static', filename='images/logo_perpus.png') }}" alt="Logo Perpustakaan"
+                    class="logo-img">
             </div>
 
             <div>
@@ -54,8 +53,7 @@
                 Mahasiswa
             </a>
 
-            <a href="/peminjaman"
-               class="menu-active">
+            <a href="/peminjaman" class="menu-active">
 
                 Peminjaman
 
@@ -145,7 +143,8 @@
                     <tr>
                         <th>NIM Mahasiswa</th>
                         <th>Kode Buku</th>
-                        <th>Durasi</th> <th>Status</th>
+                        <th>Durasi</th>
+                        <th>Status</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>

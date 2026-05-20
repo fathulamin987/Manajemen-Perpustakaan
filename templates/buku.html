@@ -2,329 +2,120 @@
 <html lang="id">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Buku</title>
-
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <!-- TOPBAR -->
     <header class="topbar">
-
         <div class="topbar-left">
-
             <div class="logo-box">
-                <img src="{{ url_for('static', filename='images/logo_perpus.png') }}" alt="Logo Perpustakaan" class="logo-img">
+                <img src="{{ url_for('static', filename='images/logo_perpus.png') }}" alt="Logo Perpustakaan"
+                    class="logo-img">
             </div>
-
             <div>
-
-                <h2 class="logo-title">
-                    Library Management
-                </h2>
-
-                <span class="logo-subtitle">
-                    Sistem Informasi Perpustakaan
-                </span>
-
+                <h2 class="logo-title">Library Management</h2>
+                <span class="logo-subtitle">Sistem Informasi Perpustakaan</span>
             </div>
-
         </div>
-
         <nav class="topbar-menu">
-
-            <a href="/">
-                Dashboard
-            </a>
-
-            <a href="/buku" class="menu-active">
-                Buku
-            </a>
-
-            <a href="/mahasiswa">
-                Mahasiswa
-            </a>
-
-            <a href="/peminjaman">
-                Peminjaman
-            </a>
-
-            <a href="/riwayat">
-                Riwayat
-            </a>
-
+            <a href="/">Dashboard</a>
+            <a href="/buku" class="menu-active">Buku</a>
+            <a href="/mahasiswa">Mahasiswa</a>
+            <a href="/peminjaman">Peminjaman</a>
+            <a href="/riwayat">Riwayat</a>
         </nav>
-
     </header>
 
-    <!-- HERO -->
-    <section class="hero-section">
-
+    <section class="hero-section small-hero">
         <div class="hero-content">
-
-            <span class="hero-badge">
-                Kelola Koleksi Buku
-            </span>
-
-            <h1>
-                Data Buku Perpustakaan
-            </h1>
-
-            <p>
-                Tambahkan, edit, dan kelola koleksi buku
-                menggunakan sistem berbasis Flask dan ADT.
-            </p>
-
+            <span class="hero-badge">Kelola Koleksi Buku</span>
+            <h1>Data Buku Perpustakaan</h1>
+            <p>Tambahkan, edit, dan kelola koleksi buku menggunakan sistem berbasis Flask dan ADT.</p>
         </div>
-
     </section>
 
-    <!-- CONTENT -->
     <main class="dashboard-wrapper">
 
-        <!-- FORM -->
         <section class="form-modern">
-
             <div class="section-header-modern">
-
-                <div>
-
-                    <h2>
-                        Tambah Buku Baru
-                    </h2>
-
-                    <p>
-                        Lengkapi data buku perpustakaan
-                    </p>
-
-                </div>
-
+                <h2>Tambah Buku Baru</h2>
+                <p>Lengkapi data buku perpustakaan</p>
             </div>
 
-            <form method="POST"
-                  action="/tambah_buku"
-                  class="form-grid-modern">
-
-                <input type="text"
-                       name="kode"
-                       placeholder="Kode Buku"
-                       required>
-
-                <input type="text"
-                       name="judul"
-                       placeholder="Judul Buku"
-                       required>
-
-                <input type="text"
-                       name="penulis"
-                       placeholder="Nama Penulis"
-                       required>
-
-                <input type="number"
-                       name="stok"
-                       placeholder="Jumlah Stok"
-                       required>
-
+            <form method="POST" action="/tambah_buku" class="form-grid-modern">
+                <input type="text" name="kode" placeholder="Kode Buku" required>
+                <input type="text" name="judul" placeholder="Judul Buku" required>
+                <input type="text" name="penulis" placeholder="Nama Penulis" required>
+                <input type="number" name="stok" placeholder="Jumlah Stok" required>
                 <select name="kategori" required>
-
-                    <option value="">
-                        Pilih Kategori
-                    </option>
-
-                    <option value="Akademik & Teknis">
-                        Akademik & Teknis
-                    </option>
-
-                    <option value="Fiksi & Sastra">
-                        Fiksi & Sastra
-                    </option>
-                    
-                    <option value="Filsafat">
-                        Filsafat
-                    </option>
-
+                    <option value="">Pilih Kategori</option>
+                    <option value="Akademik & Teknis">Akademik & Teknis</option>
+                    <option value="Fiksi & Sastra">Fiksi & Sastra</option>
+                    <option value="Filsafat">Filsafat</option>
                 </select>
-
-                <button type="submit">
-                    Tambah Buku
-                </button>
-
+                <button type="submit">Tambah Buku</button>
             </form>
-
         </section>
 
-        <!-- FILTER -->
         <section class="filter-modern">
-
             <div>
-
-                <h3>
-                    Filter Buku
-                </h3>
-
-                <p>
-                    Tampilkan berdasarkan kategori
-                </p>
-
+                <h3>Filter Kategori</h3>
+                <p>Tampilkan buku berdasarkan kategori yang dipilih</p>
             </div>
-
-            <form method="GET"
-                  action="/buku">
-
-                <select name="filter_kategori"
-                        onchange="this.form.submit()">
-
-                    <option value="">
-                        Semua Kategori
-                    </option>
-
-                    <option value="Akademik & Teknis"
-                    {% if kategori_terpilih == 'Akademik & Teknis' %}
-                    selected
-                    {% endif %}>
-
-                        Akademik & Teknis
-
-                    </option>
-
-                    <option value="Fiksi & Sastra"
-                    {% if kategori_terpilih == 'Fiksi & Sastra' %}
-                    selected
-                    {% endif %}>
-
-                        Fiksi & Sastra
-
-                    </option>
-                    
-                    <option value="Filsafat"
-                    {% if kategori_terpilih == 'Filsafat' %}
-                    selected
-                    {% endif %}>
-
-                        Filsafat
-
-                    </option>
-
+            <form method="GET" action="/buku">
+                <select name="kategori" onchange="this.form.submit()">
+                    <option value="">Semua Kategori</option>
+                    <option value="Akademik & Teknis" {% if kategori_terpilih=='Akademik & Teknis' %}selected{% endif
+                        %}>Akademik & Teknis</option>
+                    <option value="Fiksi & Sastra" {% if kategori_terpilih=='Fiksi & Sastra' %}selected{% endif %}>Fiksi
+                        & Sastra</option>
+                    <option value="Filsafat" {% if kategori_terpilih=='Filsafat' %}selected{% endif %}>Filsafat</option>
                 </select>
-
             </form>
-
         </section>
 
-        <!-- GRID -->
         <section class="books-modern-grid">
-
             {% for item in buku %}
-
             <div class="book-modern-card">
 
-                <!-- HEADER -->
                 <div class="book-modern-header">
-
-                    <span class="book-code">
-
-                        {{ item.kode }}
-
-                    </span>
+                    <span class="book-code">{{ item.kode }}</span>
 
                     {% if item.kategori == 'Akademik & Teknis' %}
-
-                    <span class="badge-blue">
-                        {{ item.kategori }}
-                    </span>
-
+                    <span class="badge-blue">{{ item.kategori }}</span>
                     {% elif item.kategori == 'Fiksi & Sastra' %}
-
-                    <span class="badge-purple">
-                        {{ item.kategori }}
-                    </span>
-                    
+                    <span class="badge-purple">{{ item.kategori }}</span>
                     {% elif item.kategori == 'Filsafat' %}
-
-                    <span class="badge-green">
-                        {{ item.kategori }}
-                    </span>
-
+                    <span class="badge-green">{{ item.kategori }}</span>
                     {% else %}
-
-                    <span class="badge-gray">
-                        Umum
-                    </span>
-
+                    <span class="badge-gray">Umum</span>
                     {% endif %}
-
                 </div>
 
-                <!-- BODY -->
                 <div class="book-modern-body">
-
-                    <h2>
-
-                        {{ item.judul }}
-
-                    </h2>
-
-                    <p>
-
-                        {{ item.penulis }}
-
-                    </p>
-
-                    <div class="stock-box">
-
-                        {{ item.stok }} Buku
-
-                    </div>
-
+                    <h2>{{ item.judul }}</h2>
+                    <p>{{ item.penulis }}</p>
+                    <div class="stock-box">Stok: {{ item.stok }} Buku</div>
                 </div>
 
-                <!-- FOOTER -->
                 <div class="book-modern-footer">
-
-                    <a href="/edit_buku/{{ item.kode }}"
-                       class="btn-edit-modern">
-
-                        Edit
-
-                    </a>
-
-                    <a href="/hapus_buku/{{ item.kode }}"
-                       class="btn-delete-modern"
-                       onclick="return confirm('Yakin ingin menghapus buku ini?')">
-
-                        Hapus
-
-                    </a>
-
+                    <a href="/edit_buku/{{ item.kode }}" class="btn-edit-modern">Edit</a>
+                    <a href="/hapus_buku/{{ item.kode }}" class="btn-delete-modern"
+                        onclick="return confirm('Yakin ingin menghapus buku ini?')">Hapus</a>
                 </div>
 
             </div>
-
             {% else %}
-
-            <div class="empty-state">
-
-                <h3>
-                    Tidak Ada Buku
-                </h3>
-
-                <p>
-                    Tidak ada data buku pada kategori ini.
-                </p>
-
+            <div class="empty-table"
+                style="grid-column: 1 / -1; background: white; border-radius: var(--radius); padding: 50px; box-shadow: var(--shadow);">
+                <h3>Tidak Ada Data Buku</h3>
+                <p>Belum ada buku yang terdaftar di dalam sistem atau kategori ini.</p>
             </div>
-
             {% endfor %}
-
         </section>
 
     </main>
