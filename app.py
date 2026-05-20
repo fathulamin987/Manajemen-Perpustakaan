@@ -2,9 +2,7 @@ from flask import Flask, render_template, request, redirect
 import json
 import os
 
-# =========================
 # IMPORT ADT / STRUKTUR DATA
-# =========================
 from struktur_data.binary_tree_buku import BinaryTree
 from struktur_data.hashing_buku import HashingBuku
 from struktur_data.pencarian import cari_buku
@@ -97,10 +95,7 @@ def tambah_buku():
     return redirect("/buku")
 
 
-# =========================
-# EDIT BUKU
-# MENGGUNAKAN HASHING
-# =========================
+# EDIT BUKU (hashing)
 @app.route("/edit_buku/<kode>")
 def edit_buku(kode):
 
@@ -140,10 +135,7 @@ def update_buku(kode):
 
     return redirect("/buku")
 
-
-# =========================
 # HAPUS BUKU
-# =========================
 @app.route("/hapus_buku/<kode>")
 def hapus_buku(kode):
 
@@ -161,10 +153,7 @@ def hapus_buku(kode):
     return redirect("/buku")
 
 
-# =========================
-# CARI BERDASARKAN KODE
-# MENGGUNAKAN HASHING
-# =========================
+# CARI BERDASARKAN KODE (hashing)
 @app.route("/cari_kode")
 def cari_kode():
 
@@ -184,10 +173,7 @@ def cari_kode():
         hasil=hasil
     )
 
-
-# =========================
 # HALAMAN MAHASISWA
-# =========================
 @app.route("/mahasiswa")
 def mahasiswa():
 
@@ -198,10 +184,7 @@ def mahasiswa():
         mahasiswa=data_mahasiswa
     )
 
-
-# =========================
 # TAMBAH MAHASISWA
-# =========================
 @app.route("/tambah_mahasiswa", methods=["POST"])
 def tambah_mahasiswa():
 
@@ -219,9 +202,7 @@ def tambah_mahasiswa():
 
     return redirect("/mahasiswa")
 
-# =========================
 # HAPUS MAHASISWA
-# =========================
 @app.route("/hapus_mahasiswa/<nim>")
 def hapus_mahasiswa(nim):
 
@@ -238,10 +219,7 @@ def hapus_mahasiswa(nim):
 
     return redirect("/mahasiswa")
 
-
-# =========================
 # HALAMAN PEMINJAMAN
-# =========================
 @app.route("/peminjaman")
 def peminjaman():
 
@@ -256,10 +234,7 @@ def peminjaman():
         peminjaman=peminjaman
     )
 
-
-# =========================
 # TAMBAH PEMINJAMAN
-# =========================
 @app.route("/tambah_peminjaman", methods=["POST"])
 def tambah_peminjaman():
 
@@ -277,11 +252,7 @@ def tambah_peminjaman():
 
     return redirect("/peminjaman")
 
-
-# =========================
-# PENGEMBALIAN
-# MENGGUNAKAN STACK
-# =========================
+# PENGEMBALIAN (stack)
 @app.route("/pengembalian/<kode>")
 def pengembalian(kode):
 
@@ -313,9 +284,7 @@ def pengembalian(kode):
     return redirect("/peminjaman")
 
 
-# =========================
 # HALAMAN RIWAYAT
-# =========================
 @app.route("/riwayat")
 def riwayat():
 
@@ -326,9 +295,6 @@ def riwayat():
         riwayat=data_riwayat
     )
 
-
-# =========================
 # MENJALANKAN FLASK
-# =========================
 if __name__ == "__main__":
     app.run(debug=True)
