@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Buku</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="sidebar-brand">
+        Sistem Perpustakaan
+    </div>
+    <div class="sidebar-menu">
+        <a href="/">Dashboard</a>
+        <a href="/buku" class="active">Data Buku</a>
+        <a href="/mahasiswa">Data Mahasiswa</a>
+        <a href="/peminjaman">Peminjaman</a>
+        <a href="/riwayat">Riwayat</a>
+    </div>
+</div>
+
+<div class="main-content">
+    <h1>Kelola Data Buku</h1>
+
+    <form method="POST" action="/tambah_buku" class="form-tambah-grid">
+        <input type="text" name="kode" placeholder="Kode Buku" required>
+        <input type="text" name="judul" placeholder="Judul Lengkap Buku" required>
+        <input type="text" name="penulis" placeholder="Nama Penulis" required>
+        <input type="number" name="stok" placeholder="Jumlah Stok" required>
+        
+        <select name="kategori" required>
+            <option value="">Pilih Kategori</option>
+            <option value="Akademik & Teknis">Akademik & Teknis</option>
+            <option value="Fiksi & Sastra">Fiksi & Sastra</option>
+        </select>
+        
+        <button type="submit">Tambah Buku</button>
+    </form>
+
+    <div class="filter-container">
+        <label>Tampilkan Kategori:</label>
+        <form method="GET" action="/buku" class="form-filter">
+            <select name="filter_kategori" onchange="this.form.submit()">
+                <option value="">Semua Kategori</option>
+                <option value="Akademik & Teknis" {% if kategori_terpilih == 'Akademik & Teknis' %}selected{% endif %}>Akademik & Teknis</option>
+                <option value="Fiksi & Sastra" {% if kategori_terpilih == 'Fiksi & Sastra' %}selected{% endif %}>Fiksi & Sastra</option>
+            </select>
+        </form>
+    </div>
+
+    <div class="daftar-buku-grid">
+        {% for item in buku %}
+        <div class="kartu-buku">
+            <div class="kartu-buku-header">
+                <span class="kode-buku-badge">{{ item.kode }}</span>
+                {% if item.kategori == 'Akademik & Teknis' %}
+                    <span class="kategori-badge badge-teknis">Akademik & Teknis</span>
+                {% elif item.kategori == 'Fiksi & Sastra' %}
+                    <span class="kategori-badge badge-sastra">Fiksi & Sastra</span>
+                {% else %}
+                    <span class="kategori-badge badge-umum">Umum</span>
+                {% endif %}
+            </div>
+
+            <div class="kartu-buku-body">
+                <h3 class="judul-buku-text">{{ item.judul }}</h3>
+                <p class="penulis-buku-text">Penulis: <span>{{ item.penulis }}</span></p>
+                <div class="stok-buku-box">
+                    <span>Stok Tersedia: <strong>{{ item.stok }} Buku</strong></span>
+                </div>
+            </div>
+
+            <div class="kartu-buku-footer">
+                <a href="/edit_buku/{{ item.kode }}" class="btn-edit-card">Edit</a>
+                <a href="/hapus_buku/{{ item.kode }}" class="btn-hapus-card" onclick="return confirm('Yakin ingin menghapus buku ini?')">Hapus</a>
+            </div>
+        </div>
+        {% else %}
+        <div class="kartu-buku-kosong">
+            <p>Tidak ada data buku yang ditemukan dalam kategori ini.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

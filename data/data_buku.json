@@ -1,0 +1,72 @@
+[
+    {
+        "kode": "A001",
+        "judul": "Belajar Python Dasar untuk Pemula",
+        "penulis": "Programmer Zaman Now",
+        "stok": 5,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A002",
+        "judul": "Dasar-Dasar Teknik Informatika",
+        "penulis": "Prof. Dr. Ir. Supriyanto",
+        "stok": 7,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A003",
+        "judul": "Kalkulus Purcell Edisi Kesembilan",
+        "penulis": "Dale Varberg",
+        "stok": 3,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A004",
+        "judul": "Metode Penelitian Kuantitatif dan Kualitatif",
+        "penulis": "Prof. Dr. Sugiyono",
+        "stok": 10,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "A005",
+        "judul": "Sains Modern dan Pengantar Astrofisika",
+        "penulis": "Dr. Thomas Djamaluddin",
+        "stok": 4,
+        "kategori": "Akademik & Teknis"
+    },
+    {
+        "kode": "F001",
+        "judul": "Laskar Pelangi",
+        "penulis": "Andrea Hirata",
+        "stok": 12,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F002",
+        "judul": "Bumi (Serial Dunia Paralel)",
+        "penulis": "Tere Liye",
+        "stok": 8,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F003",
+        "judul": "Dilan 1990: Dia adalah Dilanku",
+        "penulis": "Pidi Baiq",
+        "stok": 6,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F004",
+        "judul": "Negeri 5 Menara",
+        "penulis": "Ahmad Fuadi",
+        "stok": 9,
+        "kategori": "Fiksi & Sastra"
+    },
+    {
+        "kode": "F005",
+        "judul": "Laut Bercerita",
+        "penulis": "Leila S. Chudori",
+        "stok": 5,
+        "kategori": "Fiksi & Sastra"
+    }
+]

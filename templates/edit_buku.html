@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Buku</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="sidebar-brand">
+        Sistem Perpustakaan
+    </div>
+    <div class="sidebar-menu">
+        <a href="/">Dashboard</a>
+        <a href="/buku" class="active">Data Buku</a>
+        <a href="/mahasiswa">Data Mahasiswa</a>
+        <a href="/peminjaman">Peminjaman</a>
+        <a href="/riwayat">Riwayat</a>
+    </div>
+</div>
+
+<div class="main-content">
+    <h1>Edit Data Buku</h1>
+
+    <form method="POST" action="/update_buku/{{ buku.kode }}">
+        <input type="text" value="{{ buku.kode }}" disabled style="background-color: #f1f5f9; color: #94a3b8;">
+        <input type="text" name="judul" value="{{ buku.judul }}" placeholder="Judul Lengkap Buku" required>
+        <input type="text" name="penulis" value="{{ buku.penulis }}" placeholder="Nama Penulis" required>
+        <input type="number" name="stok" value="{{ buku.stok }}" placeholder="Jumlah Stok" required>
+        
+        <select name="kategori" required>
+            <option value="">Pilih Kategori</option>
+            <option value="Akademik & Teknis" {% if buku.kategori == 'Akademik & Teknis' %}selected{% endif %}>Akademik & Teknis</option>
+            <option value="Fiksi & Sastra" {% if buku.kategori == 'Fiksi & Sastra' %}selected{% endif %}>Fiksi & Sastra</option>
+        </select>
+        
+        <button type="submit">Update Buku</button>
+    </form>
+</div>
+
+</body>
+</html>

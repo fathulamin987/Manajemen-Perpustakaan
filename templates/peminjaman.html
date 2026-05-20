@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peminjaman</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="sidebar-brand">Sistem Perpustakaan</div>
+    <div class="sidebar-menu">
+        <a href="/">Dashboard</a>
+        <a href="/buku">Data Buku</a>
+        <a href="/mahasiswa">Data Mahasiswa</a>
+        <a href="/peminjaman" class="active">Peminjaman</a>
+        <a href="/riwayat">Riwayat</a>
+    </div>
+</div>
+
+<div class="main-content">
+    <h1>Peminjaman Aktif</h1>
+
+    <form method="POST" action="/tambah_peminjaman">
+        <select name="nim" required>
+            <option value="">Pilih Mahasiswa Peminjam</option>
+            {% for item in mahasiswa %}
+            <option value="{{ item.nim }}">{{ item.nama }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="kode_buku" required>
+            <option value="">Pilih Buku yang Dipinjam</option>
+            {% for item in buku %}
+            <option value="{{ item.kode }}">{{ item.judul }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Proses Pinjam</button>
+    </form>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>NIM Peminjam</th>
+                    <th>Kode Buku</th>
+                    <th style="width: 150px;">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in peminjaman %}
+                <tr>
+                    <td>{{ item.nim }}</td>
+                    <td style="font-weight: 600; color: var(--text-title);">{{ item.kode_buku }}</td>
+                    <td>
+                        <a href="/pengembalian/{{ item.kode_buku }}">Selesai</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

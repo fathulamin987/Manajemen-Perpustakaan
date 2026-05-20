@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="sidebar-brand">Sistem Perpustakaan</div>
+    <div class="sidebar-menu">
+        <a href="/">Dashboard</a>
+        <a href="/buku">Data Buku</a>
+        <a href="/mahasiswa">Data Mahasiswa</a>
+        <a href="/peminjaman">Peminjaman</a>
+        <a href="/riwayat" class="active">Riwayat</a>
+    </div>
+</div>
+
+<div class="main-content">
+    <h1>Log Riwayat Pengembalian</h1>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>NIM Mahasiswa</th>
+                    <th>Kode Buku</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in riwayat %}
+                <tr>
+                    <td>{{ item.nim }}</td>
+                    <td style="font-weight: 600; color: var(--text-title);">{{ item.kode_buku }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

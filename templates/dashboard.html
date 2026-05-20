@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Perpustakaan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="sidebar-brand">Sistem Perpustakaan</div>
+    <div class="sidebar-menu">
+        <a href="/" class="active">Dashboard</a>
+        <a href="/buku">Data Buku</a>
+        <a href="/mahasiswa">Data Mahasiswa</a>
+        <a href="/peminjaman">Peminjaman</a>
+        <a href="/riwayat">Riwayat</a>
+    </div>
+</div>
+
+<div class="main-content">
+    <h1>Dashboard Utama</h1>
+
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <h2>Total Koleksi Buku</h2>
+            <p>{{ total_buku }}</p>
+        </div>
+
+        <div class="metric-card">
+            <h2>Mahasiswa Terdaftar</h2>
+            <p>{{ total_mahasiswa }}</p>
+        </div>
+
+        <div class="metric-card">
+            <h2>Sedang dipinjam</h2>
+            <p>{{ total_peminjaman }}</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
