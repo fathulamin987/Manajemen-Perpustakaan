@@ -38,4 +38,4 @@ Proyek tugas ini disusun, dirancang, dan diselesaikan oleh kelompok kami yang be
 </table>
 
 ---
-*Dibuat untuk kepentingan project matakuliah struktur data — Teknik Informatika UTM @ 2026*
+*Dibuat untuk kepentingan project matakuliah struktur data IF2D — Teknik Informatika UTM @ 2026*
