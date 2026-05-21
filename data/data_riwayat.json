@@ -21,5 +21,15 @@
         "nim": "240411100217",
         "kode_buku": "N009",
         "durasi": 7
+    },
+    {
+        "nim": "240411100227",
+        "kode_buku": "A001",
+        "durasi": 2
+    },
+    {
+        "nim": "240411100178",
+        "kode_buku": "NVL001",
+        "durasi": 1
     }
 ]
