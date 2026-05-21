@@ -52,10 +52,13 @@
                 <input type="text" name="penulis" placeholder="Nama Penulis" required>
                 <input type="number" name="stok" placeholder="Jumlah Stok" required>
                 <select name="kategori" required>
-                    <option value="">Pilih Kategori</option>
-                    <option value="Akademik & Teknis">Akademik & Teknis</option>
-                    <option value="Fiksi & Sastra">Fiksi & Sastra</option>
-                    <option value="Filsafat">Filsafat</option>
+                    <option value="Teknologi & Komputer">Teknologi & Komputer</option>
+                    <option value="Sains & Matematika">Sains & Matematika</option>
+                    <option value="Pendidikan & Bahasa">Pendidikan & Bahasa</option>
+                    <option value="Novel & Fiksi">Novel & Fiksi</option>
+                    <option value="Sastra & Puisi">Sastra & Puisi</option>
+                    <option value="Filsafat Klasik">Filsafat Klasik</option>
+                    <option value="Pemikiran Kontemporer">Pemikiran Kontemporer</option>
                 </select>
                 <button type="submit">Tambah Buku</button>
             </form>
@@ -69,11 +72,9 @@
             <form method="GET" action="/buku">
                 <select name="kategori" onchange="this.form.submit()">
                     <option value="">Semua Kategori</option>
-                    <option value="Akademik & Teknis" {% if kategori_terpilih=='Akademik & Teknis' %}selected{% endif
-                        %}>Akademik & Teknis</option>
-                    <option value="Fiksi & Sastra" {% if kategori_terpilih=='Fiksi & Sastra' %}selected{% endif %}>Fiksi
-                        & Sastra</option>
-                    <option value="Filsafat" {% if kategori_terpilih=='Filsafat' %}selected{% endif %}>Filsafat</option>
+                    {% for kat in semua_kategori %}
+                    <option value="{{ kat }}" {% if kategori_terpilih==kat %}selected{% endif %}>{{ kat }}</option>
+                    {% endfor %}
                 </select>
             </form>
         </section>
@@ -85,14 +86,44 @@
                 <div class="book-modern-header">
                     <span class="book-code">{{ item.kode }}</span>
 
-                    {% if item.kategori == 'Akademik & Teknis' %}
-                    <span class="badge-blue">{{ item.kategori }}</span>
-                    {% elif item.kategori == 'Fiksi & Sastra' %}
-                    <span class="badge-purple">{{ item.kategori }}</span>
-                    {% elif item.kategori == 'Filsafat' %}
-                    <span class="badge-green">{{ item.kategori }}</span>
+                    {% if item.kategori == 'Teknologi & Komputer' %}
+                    <span class="badge-blue"
+                        style="background: rgba(37, 99, 235, 0.1); color: #2563eb; font-weight: 600; padding: 4px 8px; border-radius: 4px;">{{
+                        item.kategori }}</span>
+
+                    {% elif item.kategori == 'Sains & Matematika' %}
+                    <span class="badge-blue"
+                        style="background: rgba(14, 165, 233, 0.1); color: #ffe600; font-weight: 600; padding: 4px 8px; border-radius: 4px;">{{
+                        item.kategori }}</span>
+
+                    {% elif item.kategori == 'Pendidikan & Bahasa' %}
+                    <span class="badge-blue"
+                        style="background: rgba(217, 119, 6, 0.1); color: #d97706; font-weight: 600; padding: 4px 8px; border-radius: 4px;">{{
+                        item.kategori }}</span>
+
+                    {% elif item.kategori == 'Novel & Fiksi' %}
+                    <span class="badge-purple"
+                        style="background: rgba(147, 51, 234, 0.1); color: #7a1dd1; font-weight: 600; padding: 4px 8px; border-radius: 4px;">{{
+                        item.kategori }}</span>
+
+                    {% elif item.kategori == 'Sastra & Puisi' %}
+                    <span class="badge-purple"
+                        style="background: rgba(219, 39, 119, 0.1); color: #db2777; font-weight: 600; padding: 4px 8px; border-radius: 4px;">{{
+                        item.kategori }}</span>
+
+                    {% elif item.kategori == 'Filsafat Klasik' %}
+                    <span class="badge-green"
+                        style="background: rgba(5, 150, 105, 0.1); color: #059669; font-weight: 600; padding: 4px 8px; border-radius: 4px;">{{
+                        item.kategori }}</span>
+
+                    {% elif item.kategori == 'Pemikiran Kontemporer' %}
+                    <span class="badge-green"
+                        style="background: rgba(225, 29, 72, 0.1); color: #e11d48; font-weight: 600; padding: 4px 8px; border-radius: 4px;">{{
+                        item.kategori }}</span>
+
                     {% else %}
-                    <span class="badge-gray">Umum</span>
+                    <span class="badge-gray"
+                        style="background: rgba(107, 114, 128, 0.1); color: #6b7280; font-weight: 600; padding: 4px 8px; border-radius: 4px;">Umum</span>
                     {% endif %}
                 </div>
 

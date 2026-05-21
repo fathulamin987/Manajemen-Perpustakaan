@@ -75,70 +75,47 @@
 
         <!-- TABLE -->
         <section class="table-modern-section">
-
             <div class="section-header-modern">
-                <div>
-                    <h2>Riwayat Pengembalian</h2>
-
-                    <p>
-                        Daftar histori buku yang telah dikembalikan
-                    </p>
-                </div>
+                <h2>Riwayat Pengembalian</h2>
+                <p>Daftar riwayat buku yang telah sukses dikembalikan oleh mahasiswa</p>
             </div>
 
             <div class="table-modern-wrapper">
-
                 <table class="modern-table">
-
                     <thead>
                         <tr>
-                            <th>NIM Mahasiswa</th>
-                            <th>Kode Buku</th>
+                            <th>Mahasiswa</th>
+                            <th>Buku yang Dipinjam</th>
                             <th>Status</th>
                         </tr>
                     </thead>
-
                     <tbody>
-
                         {% for item in riwayat %}
                         <tr>
-
                             <td class="table-highlight">
-                                {{ item.nim }}
+                                <strong>{{ item.nim }}</strong><br>
+                                <span style="font-size: 13px; color: var(--gray);">{{ item.nama_mahasiswa }}</span>
                             </td>
-
+                            
                             <td>
-                                {{ item.kode_buku }}
+                                <code>{{ item.kode_buku }}</code> - <strong>{{ item.judul_buku }}</strong>
                             </td>
-
+                            
                             <td>
-                                <span class="status-finished">
+                                <span class="status-finished" style="background: rgba(34, 197, 94, 0.1); color: #22c55e; padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; display: inline-block;">
                                     Dikembalikan
                                 </span>
                             </td>
-
                         </tr>
-
                         {% else %}
                         <tr>
-
-                            <td colspan="3" class="empty-table">
-
-                                Belum ada riwayat pengembalian
-
-                            </td>
-
+                            <td colspan="3" class="empty-table">Belum ada riwayat pengembalian</td>
                         </tr>
                         {% endfor %}
-
                     </tbody>
-
                 </table>
-
             </div>
-
         </section>
-
     </main>
 
 </body>

@@ -50,6 +50,13 @@ def buku():
     keyword = request.args.get("keyword", "")
     kategori_terpilih = request.args.get("kategori", "")
 
+    # Ambil daftar semua kategori unik secara otomatis dari data_buku.json
+    semua_kategori = sorted(list(set([b.get("kategori") for b in data_buku if b.get("kategori")])))
+
+    # PROSES FILTER KATEGORI TERLEBIH DAHULU (Agar data dipotong sebelum masuk Tree)
+    if kategori_terpilih:
+        data_buku = [buku for buku in data_buku if buku.get("kategori") == kategori_terpilih]
+
     # PROSES SEARCHING ADT (JIKA ADA KEYWORD)
     if keyword:
         data_buku = cari_buku(data_buku, keyword)
@@ -59,21 +66,17 @@ def buku():
     for item in data_buku:
         tree.insert(item)
 
-    # SORTING ADT (Mengambil hasil urutan dari BinaryTree)
-    data_buku = urutkan_judul(tree.inorder())
+    # SORTING ADT
+    data_buku = tree.inorder()
 
-    # PROSES FILTER KATEGORI (Dilakukan paling akhir agar tidak tertimpa struktur Tree)
-    if kategori_terpilih:
-        data_buku = [buku for buku in data_buku if buku.get("kategori") == kategori_terpilih]
-
-    # KIRIMKAN VARIABEL KE HTML
+    # KIRIMKAN VARIABEL KE HTML (Menambahkan variabel semua_kategori)
     return render_template(
         "buku.html",
         buku=data_buku,
         keyword=keyword,
-        kategori_terpilih=kategori_terpilih
+        kategori_terpilih=kategori_terpilih,
+        semua_kategori=semua_kategori
     )
-
 # TAMBAH BUKU
 @app.route("/tambah_buku", methods=["POST"])
 def tambah_buku():
@@ -219,19 +222,29 @@ def hapus_mahasiswa(nim):
 
     return redirect("/mahasiswa")
 
-# HALAMAN PEMINJAMAN
+# PEMINJAMAN
 @app.route("/peminjaman")
 def peminjaman():
 
     buku = baca_json("data/data_buku.json")
     mahasiswa = baca_json("data/data_mahasiswa.json")
-    peminjaman = baca_json("data/data_peminjaman.json")
+    peminjaman_mentah = baca_json("data/data_peminjaman.json")
+
+    dict_mahasiswa = {mhs["nim"]: mhs["nama"] for mhs in mahasiswa}
+    dict_buku = {bk["kode"]: bk["judul"] for bk in buku}
+
+    peminjaman_lengkap = []
+    for item in peminjaman_mentah:
+        item_baru = item.copy()
+        item_baru["nama_mahasiswa"] = dict_mahasiswa.get(item["nim"], item["nim"])
+        item_baru["judul_buku"] = dict_buku.get(item["kode_buku"], item["kode_buku"])
+        peminjaman_lengkap.append(item_baru)
 
     return render_template(
         "peminjaman.html",
         buku=buku,
         mahasiswa=mahasiswa,
-        peminjaman=peminjaman
+        peminjaman=peminjaman_lengkap  
     )
 
 # TAMBAH PEMINJAMAN
@@ -239,10 +252,16 @@ def peminjaman():
 def tambah_peminjaman():
 
     data_peminjaman = baca_json("data/data_peminjaman.json")
+    
+    raw_nim = request.form["nim"]
+    raw_kode_buku = request.form["kode_buku"]
+
+    nim_bersih = raw_nim.split(" - ")[0].strip() if " - " in raw_nim else raw_nim.strip()
+    kode_buku_bersih = raw_kode_buku.split(" - ")[0].strip() if " - " in raw_kode_buku else raw_kode_buku.strip()
 
     pinjam_baru = {
-        "nim": request.form["nim"],
-        "kode_buku": request.form["kode_buku"],
+        "nim": nim_bersih,
+        "kode_buku": kode_buku_bersih,
         "durasi": int(request.form["durasi"])
     }
 
@@ -284,15 +303,27 @@ def pengembalian(kode):
     return redirect("/peminjaman")
 
 
-# HALAMAN RIWAYAT
+# RIWAYAT
 @app.route("/riwayat")
 def riwayat():
 
-    data_riwayat = baca_json("data/data_riwayat.json")
+    buku = baca_json("data/data_buku.json")
+    mahasiswa = baca_json("data/data_mahasiswa.json")
+    riwayat_mentah = baca_json("data/data_riwayat.json")
+
+    dict_mahasiswa = {mhs["nim"]: mhs["nama"] for mhs in mahasiswa}
+    dict_buku = {bk["kode"]: bk["judul"] for bk in buku}
+
+    riwayat_lengkap = []
+    for item in riwayat_mentah:
+        item_baru = item.copy()
+        item_baru["nama_mahasiswa"] = dict_mahasiswa.get(item["nim"], item["nim"])
+        item_baru["judul_buku"] = dict_buku.get(item["kode_buku"], item["kode_buku"])
+        riwayat_lengkap.append(item_baru)
 
     return render_template(
-        "riwayat.html",
-        riwayat=data_riwayat
+        "riwayat.html", 
+        riwayat=riwayat_lengkap  
     )
 
 # MENJALANKAN FLASK
