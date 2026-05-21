@@ -1,35 +1,22 @@
 [
     {
         "nim": "240411100217",
-        "kode_buku": "N001"
+        "kode_buku": "NVL017",
+        "durasi": 4
     },
     {
         "nim": "240411100227",
-        "kode_buku": "N004"
-    },
-    {
-        "nim": "240411100178",
-        "kode_buku": "F007",
-        "durasi": 1
-    },
-    {
-        "nim": "240411100227",
-        "kode_buku": "F003",
+        "kode_buku": "NVL017",
         "durasi": 2
     },
     {
-        "nim": "240411100217",
-        "kode_buku": "N009",
-        "durasi": 7
-    },
-    {
-        "nim": "240411100227",
-        "kode_buku": "A001",
-        "durasi": 2
+        "nim": "240411100028",
+        "kode_buku": "NVL017",
+        "durasi": 3
     },
     {
         "nim": "240411100178",
-        "kode_buku": "NVL001",
+        "kode_buku": "NVL017",
         "durasi": 1
     }
 ]
